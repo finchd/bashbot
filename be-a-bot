@@ -431,4 +431,149 @@ PART #notents :ploppy-bot!bortele@ruby.cat.pdx.edu JOIN #notents
 QUIT
 DONE
 ]0;dondon@span:~/projects/finchd/bashbot[dondon@span bashbot]$ ls
-LICENSE  README
+LICENSE  README.md  be-a-bot
+]0;dondon@span:~/projects/finchd/bashbot[dondon@span bashbot]$ wget https://gist.githubusercontent.com/hunner/63f66eeaa7e81c816618/raw/e8fbc16 285a0f1649d69b76d63aafe1801591e0a/bashbot.sh
+--2014-05-30 19:31:15--  https://gist.githubusercontent.com/hunner/63f66eeaa7e81c816618/raw/e8fbc16285a0f1649d69b76d63aafe1801591e0a/bashbot.sh
+Resolving gist.githubusercontent.com (gist.githubusercontent.com)... 192.30.252.157
+Connecting to gist.githubusercontent.com (gist.githubusercontent.com)|192.30.252.157|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘bashbot.sh’
+
+    [<=>                                                          ] 0           --.-K/s                  [ <=>                                                         ] 353         --.-K/s   in 0s      
+
+2014-05-30 19:31:15 (4.76 MB/s) - ‘bashbot.sh’ saved [353]
+
+]0;dondon@span:~/projects/finchd/bashbot[dondon@span bashbot]$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	[32mnew file:   LICENSE[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31mREADME.md[m
+	[31mbashbot.sh[m
+	[31mbe-a-bot[m
+
+]0;dondon@span:~/projects/finchd/bashbot[dondon@span bashbot]$ git add -a
+error: unknown switch `a'
+usage: git add [options] [--] <pathspec>...
+
+    -n, --dry-run         dry run
+    -v, --verbose         be verbose
+
+    -i, --interactive     interactive picking
+    -p, --patch           select hunks interactively
+    -e, --edit            edit current diff and apply
+    -f, --force           allow adding otherwise ignored files
+    -u, --update          update tracked files
+    -N, --intent-to-add   record only the fact that the path will be added later
+    -A, --all             add changes from all tracked and untracked files
+    --ignore-removal      ignore paths removed in the working tree (same as --no-all)
+    --refresh             don't add, only refresh the index
+    --ignore-errors       just skip files which cannot be added because of errors
+    --ignore-missing      check if - even missing - files are ignored in dry run
+
+]0;dondon@span:~/projects/finchd/bashbot[dondon@span bashbot]$ git add -a[K[K.
+]0;dondon@span:~/projects/finchd/bashbot[dondon@span bashbot]$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	[32mnew file:   LICENSE[m
+	[32mnew file:   README.md[m
+	[32mnew file:   bashbot.sh[m
+	[32mnew file:   be-a-bot[m
+
+]0;dondon@span:~/projects/finchd/bashbot[dondon@span bashbot]$ git commit -a -m "Initi[K[K[K[K[K[K[K[K[K[K
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H[1;47r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[47;1H"~/projects/finchd/bashbot/.git/COMMIT_EDITMSG" 13L, 299C[>cP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[1;1H[38;5;130m  1 
+  2 [m[34m# Please enter the commit message for your changes. Lines starting[m
+[38;5;130m  3 [m[34m# with '#' will be ignored, and an empty message aborts the commit.[m
+[38;5;130m  4 [m[34m# On branch [m[35mmaster[m
+[38;5;130m  5 [m[34m#[m
+[38;5;130m  6 [m[34m# Initial commit[m
+[38;5;130m  7 [m[34m#[m
+[38;5;130m  8 [m[34m# [m[35mChanges to be committed:[m
+[38;5;130m  9 [m[34m#       [m[32mnew file[m[34m: [m[31m  LICENSE[m
+[38;5;130m 10 [m[34m#       [m[32mnew file[m[34m: [m[31m  README.md[m
+[38;5;130m 11 [m[34m#       [m[32mnew file[m[34m: [m[31m  bashbot.sh[m
+[38;5;130m 12 [m[34m#       [m[32mnew file[m[34m: [m[31m  be-a-bot[m
+[38;5;130m 13 [m[34m#[m
+[94m~                                                                                                     [15;1H~                                                                                                     [16;1H~                                                                                                     [17;1H~                                                                                                     [18;1H~                                                                                                     [19;1H~                                                                                                     [20;1H~                                                                                                     [21;1H~                                                                                                     [22;1H~                                                                                                     [23;1H~                                                                                                     [24;1H~                                                                                                     [25;1H~                                                                                                     [26;1H~                                                                                                     [27;1H~                                                                                                     [28;1H~                                                                                                     [29;1H~                                                                                                     [30;1H~                                                                                                     [31;1H~                                                                                                     [32;1H~                                                                                                     [33;1H~                                                                                                     [34;1H~                                                                                                     [35;1H~                                                                                                     [36;1H~                                                                                                     [37;1H~                                                                                                     [38;1H~                                                                                                     [39;1H~                                                                                                     [40;1H~                                                                                                     [41;1H~                                                                                                     [42;1H~                                                                                                     [43;1H~                                                                                                     [44;1H~                                                                                                     [45;1H~                                                                                                     [m[46;1H[1m[7m.git/COMMIT_EDITMSG  Line:1/13[7%]Col:1Buf:#1[0][0x0]                                                 [1;5H[?12l[?25h[?25l[m[47;1H[1m-- INSERT --[m[47;13H[K[1;5H[?12l[?25h[?25l[38;5;130mn[m[46;21H[1m[7m[+] Line:1/13[7%]Col:2Buf:#1[0][0x0][1;6H[?12l[?25h[?25l[m[38;5;130mi[m[46;42H[1m[7m3B[1;7H[?12l[?25h[?25l[m[38;5;130mt[m[46;42H[1m[7m4B[1;8H[?12l[?25h[?25l[m[1;7H[K[46;42H[1m[7m3B[1;7H[?12l[?25h[?25l[m[1;6H[K[46;42H[1m[7m2B[1;6H[?12l[?25h[?25l[m[1;5H[K[46;42H[1m[7m1B[1;5H[?12l[?25h[?25l[m[38;5;130mI[m[46;42H[1m[7m2B[1;6H[?12l[?25h[?25l[m[38;5;130mn[m[46;42H[1m[7m3B[1;7H[?12l[?25h[?25l[m[38;5;130mi[m[46;42H[1m[7m4B[1;8H[?12l[?25h[?25l[m[38;5;130mt[m[46;42H[1m[7m5B[1;9H[?12l[?25h[?25l[m[38;5;130mi[m[46;42H[1m[7m6B[1;10H[?12l[?25h[?25l[m[38;5;130ma[m[46;42H[1m[7m7B[1;11H[?12l[?25h[?25l[m[38;5;130ml[m[46;42H[1m[7m8B[1;12H[?12l[?25h[?25l[m[34m.[m[46;42H[1m[7m9B[1;13H[?12l[?25h[?25l[m[38;5;130m C[m[46;42H[1m[7m10Buf:#1[0][0x0][1;14H[?12l[?25h[?25l[m[38;5;130mo[m[46;43H[1m[7m1B[1;15H[?12l[?25h[?25l[m[38;5;130mm[m[46;43H[1m[7m2B[1;16H[?12l[?25h[?25l[m[38;5;130mm[m[46;43H[1m[7m3B[1;17H[?12l[?25h[?25l[m[38;5;130mi[m[46;43H[1m[7m4B[1;18H[?12l[?25h[?25l[m[38;5;130mt[m[46;43H[1m[7m5B[1;19H[?12l[?25h[?25l[m[47;1H[K[47;1H=<SNR>85_SelectCompletion(1)[2;5H[K[3;7H[34mPlease enter the commit message for your changes. Lines starting[m[3;71H[K[4;7H[34mwith '#' will be ignored, and an empty message aborts the commit.[5;6H On branch [m[35mmaster[m[6;6H[K[7;6H[34m Initial commit[m[8;6H[K[9;7H[35mChanges to be committed:[m[9;31H[K[10;25H[31mLICENSE[m[10;32H[K[11;25H[31mREADME.md[m[11;34H[K[12;26H[31mashbot.sh[m[13;6H[34m       [m[32mnew file[m[34m: [m[31m  be-a-bot[m
+[38;5;130m 14 [m[34m#[m[14;6H[K[47;1H[1m-- INSERT --[m[47;13H[K[46;30H[1m[7m2/14[14%]Col:1B[2;5H[?12l[?25h[?25l[m[47;1H[K[47;1H=<SNR>85_SelectCompletion(1)[3;5H[K[4;7H[34mPlease enter the commit message for your changes. Lines starting[m[4;71H[K[5;7H[34mwith '#' will be ignored, and an empty message aborts the commit.[6;6H On branch [m[35mmaster[m[7;6H[K[8;6H[34m Initial commit[m[9;6H[K[10;7H[35mChanges to be committed:[m[10;31H[K[11;25H[31mLICENSE[m[11;32H[K[12;25H[31mREADME.md[m[12;34H[K[13;26H[31mashbot.sh[m[14;6H[34m       [m[32mnew file[m[34m: [m[31m  be-a-bot[m
+[38;5;130m 15 [m[34m#[m[15;6H[K[47;1H[1m-- INSERT --[m[47;13H[K[46;30H[1m[7m3/15[20%[3;5H[?12l[?25h[?25l[mM[46;43H[1m[7m2B[3;6H[?12l[?25h[?25l[ma[46;43H[1m[7m3B[3;7H[?12l[?25h[?25l[mk[46;43H[1m[7m4B[3;8H[?12l[?25h[?25l[me[46;43H[1m[7m5B[3;9H[?12l[?25h[?25l[m[34m.[m[46;43H[1m[7m6B[3;10H[?12l[?25h[?25l[m G[46;43H[1m[7m7B[3;11H[?12l[?25h[?25l[mP[46;43H[1m[7m8B[3;12H[?12l[?25h[?25l[mL[46;43H[1m[7m9B[3;13H[?12l[?25h[?25l[mv[46;43H[1m[7m10Buf:#1[0][0x0][3;14H[?12l[?25h[?25l[m3[46;44H[1m[7m1B[3;15H[?12l[?25h[?25l[ml[46;44H[1m[7m2B[3;16H[?12l[?25h[?25l[m,[46;44H[1m[7m3B[3;17H[?12l[?25h[?25l[m[3;16H[K[46;44H[1m[7m2B[3;16H[?12l[?25h[?25l[m[3;15H[K[46;44H[1m[7m1B[3;15H[?12l[?25h[?25l[m,[46;44H[1m[7m2B[3;16H[?12l[?25h[?25l[m[34m.[m[46;44H[1m[7m3B[3;17H[?12l[?25h[?25l[m a[46;44H[1m[7m4B[3;18H[?12l[?25h[?25l[md[46;44H[1m[7m5B[3;19H[?12l[?25h[?25l[md[46;44H[1m[7m6B[3;20H[?12l[?25h[?25l[m[34m.[m[46;44H[1m[7m7B[3;21H[?12l[?25h[?25l[m[1;5H[K[3;5H[K[4;5H[94m<[ma7e81c816618/raw/e8fbc16285a0f1649d69b76d63aafe1801591e0a/bashbot.sh[5;5H[94m<[m[34m. Lines starting[m[5;22H[K[6;5H[94m<[m[34mborts the commit.[m[7;5H[K[8;5H[K[9;5H[K[10;5H[K[11;5H[K[12;5H[K[13;5H[K[14;5H[K[15;5H[K[16;1H[38;5;130m 16 [m[16;5H[K[46;30H[1m[7m4/16[25%]Col:119Buf:#1[0][0x0][4;74H[?12l[?25h[?25l[m,[46;44H[1m[7m20B[4;75H[?12l[?25h[?25l[m[47;1H[K[47;1H=<SNR>85_SelectCompletion(1)[1;5H[38;5;130mInitial Commit[m[3;5HMake GPLv3, add[4;5Hhttps://gist.githubusercontent.com/hunner/63f66eeaa7e81c816618/raw/e8fbc16285a0f1649d69b76d63aafe[94m>[m[5;5H[K[6;5H[34m# Please enter the commit message for your changes. Lines starting[7;5H# with '#' will be ignored, and an empty message aborts the commit.[8;5H# On branch [m[35mmaster[m[9;5H[34m#[10;5H# Initial commit[11;5H#[12;5H# [m[35mChanges to be committed:[m[13;5H[34m#       [m[32mnew file[m[34m: [m[31m  LICENSE[m[14;5H[34m#       [m[32mnew file[m[34m: [m[31m  README.md[m[15;5H[34m#       [m[32mnew file[m[34m: [m[31m  bashbot.sh[m[16;5H[34m#       [m[32mnew file[m[34m: [m[31m  be-a-bot[m
+[38;5;130m 17 [m[34m#[m[17;6H[K[46;30H[1m[7m5/17[29%]Col:1Buf:#1[0][0x0]   [m
+[1m-- INSERT --[m[47;13H[K[5;5H[?12l[?25h[?25la[46;43H[1m[7m2B[5;6H[?12l[?25h[?25l[mn[46;43H[1m[7m3B[5;7H[?12l[?25h[?25l[md[46;43H[1m[7m4B[5;8H[?12l[?25h[?25l[m[34m.[m[46;43H[1m[7m5B[5;9H[?12l[?25h[?25l[m s[46;43H[1m[7m6B[5;10H[?12l[?25h[?25l[mc[46;43H[1m[7m7B[5;11H[?12l[?25h[?25l[mr[46;43H[1m[7m8B[5;12H[?12l[?25h[?25l[mi[46;43H[1m[7m9B[5;13H[?12l[?25h[?25l[mp[46;43H[1m[7m10Buf:#1[0][0x0][5;14H[?12l[?25h[?25l[mt[46;44H[1m[7m1B[5;15H[?12l[?25h[?25l[m[34m.[m[46;44H[1m[7m2B[5;16H[?12l[?25h[?25l[m s[46;44H[1m[7m3B[5;17H[?12l[?25h[?25l[me[46;44H[1m[7m4B[5;18H[?12l[?25h[?25l[ms[46;44H[1m[7m5B[5;19H[?12l[?25h[?25l[ms[46;44H[1m[7m6B[5;20H[?12l[?25h[?25l[mi[46;44H[1m[7m7B[5;21H[?12l[?25h[?25l[mo[46;44H[1m[7m8B[5;22H[?12l[?25h[?25l[mn[46;44H[1m[7m9B[5;23H[?12l[?25h[?25l[m[34m.[m[46;43H[1m[7m20B[5;24H[?12l[?25h[?25l[m b[46;44H[1m[7m1B[5;25H[?12l[?25h[?25l[me[46;44H[1m[7m2B[5;26H[?12l[?25h[?25l[m-[46;44H[1m[7m3B[5;27H[?12l[?25h[?25l[ma[46;44H[1m[7m4B[5;28H[?12l[?25h[?25l[m-[46;44H[1m[7m5B[5;29H[?12l[?25h[?25l[mb[46;44H[1m[7m6B[5;30H[?12l[?25h[?25l[mo[46;44H[1m[7m7B[5;31H[?12l[?25h[?25l[mt[46;44H[1m[7m8B[5;32H[?12l[?25h[m[47;1H[K[5;31H[?25l[46;44H[1m[7m7Buf:#1[116][0x74][5;31H[?12l[?25h[?25l[47;1H[m:[?12l[?25hw[?25l[?12l[?25h[?25l".git/COMMIT_EDITMSG" 17L, 478C written[46;21H[1m[7m Line:5/17[29%]Col:27Buf:#1[116][0x74]    [5;31H[?12l[?25h[?25l[m[47;1H[K[47;1H:[?12l[?25hx[?25l[?12l[?25h[?25l[47;1H[K[47;1H[?1l>[?12l[?25h[?1049l[master (root-commit) ea28ec4] Initial Commit
+ 4 files changed, 451 insertions(+)
+ create mode 100644 LICENSE
+ create mode 100644 README.md
+ create mode 100644 bashbot.sh
+ create mode 100644 be-a-bot
+]0;dondon@span:~/projects/finchd/bashbot[dondon@span bashbot]$ git push origin master
+Counting objects: 6, done.
+Delta compression using up to 2 threads.
+Compressing objects:  25% (1/4)   Compressing objects:  50% (2/4)   Compressing objects:  75% (3/4)   Compressing objects: 100% (4/4)   Compressing objects: 100% (4/4), done.
+Writing objects:  16% (1/6)   Writing objects:  33% (2/6)   Writing objects:  50% (3/6)   Writing objects:  66% (4/6)   Writing objects:  83% (5/6)   Writing objects: 100% (6/6)   Writing objects: 100% (6/6), 8.70 KiB | 0 bytes/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To git@github.com:finchd/bashbot.git
+ * [new branch]      master -> master
+]0;dondon@span:~/projects/finchd/bashbot[dondon@span bashbot]$ vim bashbot.sh 
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H[1;47r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[47;1H"bashbot.sh" [noeol] 16L, 353C[>c[1;1H[38;5;130m  1 [m[34m#!/usr/bin/env bash[m
+[38;5;130m  2 
+  3 [m[36mline[m=[38;5;130m""
+  4 [m[36mstarted[m=[38;5;130m""
+  5 rm[m botfile
+[38;5;130m  6 [mmkfifo botfile
+[38;5;130m  7 tail[m [35m-f[m botfile | nc irc.cat.pdx.edu [31m6667[m | [38;5;130mwhile true ; do
+  8 [m    [38;5;130mif [[m [38;5;130m-z[m [35m$started[m [38;5;130m][m ; [38;5;130mthen
+  9 [8Cecho[m[31m [m[38;5;130m"[m[31mUSER bdbot 0 bdbot :I iz a bot[m[38;5;130m"[m[31m [m[38;5;130m>[m botfile
+[38;5;130m 10 [8Cecho[m[31m [m[38;5;130m"[m[31mNICK bdbot[m[38;5;130m"[m[31m [m[38;5;130m>>[m botfile
+[38;5;130m 11 [8Cecho[m[31m [m[38;5;130m"[m[31mJOIN #notzombies[m[38;5;130m"[m[31m [m[38;5;130m>>[m botfile
+[38;5;130m 12 [m[8C[36mstarted[m=[38;5;130m"[m[31myes[m[38;5;130m"
+ 13 [m    [38;5;130mfi
+ 14 [m    [38;5;130mread[m irc
+[38;5;130m 15 [m    [34m#echo $irc[m
+[38;5;130m 16 done[m
+[94m~                                                                                                     [18;1H~                                                                                                     [19;1H~                                                                                                     [20;1H~                                                                                                     [21;1H~                                                                                                     [22;1H~                                                                                                     [23;1H~                                                                                                     [24;1H~                                                                                                     [25;1H~                                                                                                     [26;1H~                                                                                                     [27;1H~                                                                                                     [28;1H~                                                                                                     [29;1H~                                                                                                     [30;1H~                                                                                                     [31;1H~                                                                                                     [32;1H~                                                                                                     [33;1H~                                                                                                     [34;1H~                                                                                                     [35;1H~                                                                                                     [36;1H~                                                                                                     [37;1H~                                                                                                     [38;1H~                                                                                                     [39;1H~                                                                                                     [40;1H~                                                                                                     [41;1H~                                                                                                     [42;1H~                                                                                                     [43;1H~                                                                                                     [44;1H~                                                                                                     [45;1H~                                                                                                     [m[46;1H[1m[7mbashbot.sh  Line:1/16[6%]Col:1Buf:#1[35][0x23]                                                        [1;5H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[46;18H2/16[12%]Col:1Buf:#1[0][0x0]  [2;5H[46;18H3/16[18%[13C108][0x6C][3;5H[46;18H4/16[25%[14C15][0x73][4;5H[46;18H5/16[31%[15C4][0x72][5;5H[46;18H6/16[37%[14C09][0x6D][6;5H[46;18H7/16[43%[14C16][0x74][7;5H[46;18H8/16[50%[13C32][0x20]  [8;5H[46;18H9/16[56%[9;5H[46;18H10/16[62%]Col:1Buf:#1[32][0x20][10;5H[46;19H1/16[68%[11;5H[46;19H2/16[75%[12;5H[46;19H3/16[81%[13;5H[?25l[m[47;1H[1m-- INSERT --[m[47;14H[K[13;5H[?12l[?25h[46;32H[1m[7m2B[13;6H[46;19H4/16[87%[14;6H[46;32H3B[14;7H[46;19H3/16[81%[13;7H[46;32H4B[13;8H[46;32H5Buf:#1[102][0x66][13;9H[46;32H6B[8C5][0x69][13;10H[46;32H7Buf:#1[0][0x0]    [13;11H[?25l[m[47;1H[K[47;1H=<SNR>85_SelectCompletion(1)[14;5H[34m....[m[14;9H[K[15;9H[38;5;130mread[m irc[15;17H[K[16;5H    [34m#echo $irc[m
+[38;5;130m 17 done[m[17;9H[K[46;12H[1m[7m[+] Line:14/17[82%]Col:5Buf:#1[0][0x0][m
+[1m-- INSERT --[m[47;13H[K[14;9H[?12l[?25h[?25l[?12l[?25h[?25l    i[46;35H[1m[7m6B[14;10H[?12l[?25h[?25l[m[38;5;130mif[m[17;5H[97m[101mdone[m[46;35H[1m[7m7B[14;11H[?12l[?25h[?25l[m[34m.[m[46;35H[1m[7m8B[14;12H[?12l[?25h[?25l[m[38;5;130m [[m[15;9Hread[17;5Hdone[46;35H[1m[7m9B[14;13H[?12l[?25h[?25l[m[34m.[m[46;35H[1m[7m10Buf:#1[0][0x0][14;14H[?12l[?25h[?25l[m [38;5;130m'[m[15;5H[31m    read irc[16;5H    #echo $irc[17;5Hdone[m[46;36H[1m[7m1B[14;15H[?12l[?25h[?25l[m[34m.[m[14;14H[K[15;5H    read irc[16;5H    [34m#echo $irc[m[17;5Hdone[46;36H[1m[7m0B[14;14H[?12l[?25h[?25l[m [35m`[15;5H    [m[38;5;130mread[m[35m irc[16;5H    #[m[38;5;130mecho[m[31m [m[35m$irc[17;5Hdone[m[46;36H[1m[7m1B[14;15H[?12l[?25h[?25l[m[35me[m[46;36H[1m[7m2B[14;16H[?12l[?25h[?25l[m[35mc[m[46;36H[1m[7m3B[14;17H[?12l[?25h[?25l[m[35mh[m[46;36H[1m[7m4B[14;18H[?12l[?25h[?25l[m[38;5;130mecho[m[46;36H[1m[7m5B[14;19H[?12l[?25h[?25l[m[34m.[m[46;36H[1m[7m6B[14;20H[?12l[?25h[?25l[m[31m $[m[46;36H[1m[7m7B[14;21H[?12l[?25h[?25l[m[35m$i[m[46;36H[1m[7m8B[14;22H[?12l[?25h[?25l[m[35mr[m[46;36H[1m[7m9B[14;23H[?12l[?25h[?25l[m[35mc[m[46;35H[1m[7m20B[14;24H[?12l[?25h[?25l[m[34m.[m[46;36H[1m[7m1B[14;25H[?12l[?25h[?25l[m[31m [m[35m|[m[46;36H[1m[7m2B[14;26H[?12l[?25h[?25l[m[34m.[m[46;36H[1m[7m3B[14;27H[?12l[?25h[?25l[m[35m c[m[46;36H[1m[7m4B[14;28H[?12l[?25h[?25l[m[35mu[m[46;36H[1m[7m5B[14;29H[?12l[?25h[?25l[m[35mr[m[46;36H[1m[7m6B[14;30H[?12l[?25h[?25l[m[14;29H[K[46;36H[1m[7m5B[14;29H[?12l[?25h[?25l[m[35mt[m[46;36H[1m[7m6B[14;30H[?12l[?25h[?25l[m[34m.[m[46;36H[1m[7m7B[14;31H[?12l[?25h[?25l[m[35m -[m[46;36H[1m[7m8B[14;32H[?12l[?25h[?25l[m[35md[m[46;36H[1m[7m9B[14;33H[?12l[?25h[?25l[m[34m.[m[46;35H[1m[7m30B[14;34H[?12l[?25h[?25l[m[35m [m[38;5;130m'[m[15;5H[31m    read irc[16;5H    #echo $irc[17;5Hdone[m[46;36H[1m[7m1B[14;35H[?12l[?25h[?25l[m[34m.[m[46;36H[1m[7m2B[14;36H[?12l[?25h[?25l[m[31m [m[38;5;130m'[m[15;5H[35m    [m[38;5;130mread[m[35m irc[16;5H    #[m[38;5;130mecho[m[1C[35m$irc[17;5Hdone[m[46;36H[1m[7m3B[14;37H[?12l[?25h[?25l[m[34m.[m[46;36H[1m[7m4B[14;38H[?12l[?25h[?25l[m[35m -[m[46;36H[1m[7m5B[14;39H[?12l[?25h[?25l[m[35mf[m[46;36H[1m[7m6B[14;40H[?12l[?25h[?25l[m[34m.[m[46;36H[1m[7m7B[14;41H[?12l[?25h[?25l[m[35m [m[31m1[m[46;36H[1m[7m8B[14;42H[?12l[?25h[?25l[m[34m.[m[46;36H[1m[7m9B[14;43H[?12l[?25h[?25l[m[14;42H[K[46;36H[1m[7m8B[14;42H[?12l[?25h[?25l[m[35m`[m[15;5H    read irc[16;5H    [34m#echo $irc[m[17;5Hdone[46;36H[1m[7m9B[14;43H[?12l[?25h[?25l[m[34m.[m[46;35H[1m[7m40B[14;44H[?12l[?25h[?25l[m [38;5;130m=[m[46;36H[1m[7m1B[14;45H[?12l[?25h[?25l[m[34m.[m[46;36H[1m[7m2B[14;46H[?12l[?25h[?25l[m [38;5;130m"[m[15;5H[31m    read irc[16;5H    #echo [m[35m$irc[m[17;5H[31mdone[m[46;36H[1m[7m3B[14;47H[?12l[?25h[?25l[m[31mP[m[46;36H[1m[7m4B[14;48H[?12l[?25h[?25l[m[31mI[m[46;36H[1m[7m5B[14;49H[?12l[?25h[?25l[m[31mN[m[46;36H[1m[7m6B[14;50H[?12l[?25h[?25l[m[31mG[m[46;36H[1m[7m7B[14;51H[?12l[?25h[?25l[m[31m"PING"[m[15;5H    read irc[16;5H    [34m#echo $irc[m[17;5Hdone[46;36H[1m[7m8B[14;52H[?12l[?25h[?25l[m[34m.[m[46;36H[1m[7m9B[14;53H[?12l[?25h[?25l[m [38;5;130m][15;9Hread[m[17;5H[97m[101mdone[m[14;12H[38;5;130m[106m[[40C][m[46;35H[1m[7m50B[14;54H[?12l[?25h[?25l[m[34m.[m[14;12H[38;5;130m[[40C][m[46;36H[1m[7m1B[14;55H[?12l[?25h[?25l[m ;[46;36H[1m[7m2B[14;56H[?12l[?25h[?25l[m[34m.[m[46;36H[1m[7m3B[14;57H[?12l[?25h[?25l[m t[46;36H[1m[7m4B[14;58H[?12l[?25h[?25l[mh[46;36H[1m[7m5B[14;59H[?12l[?25h[?25l[me[46;36H[1m[7m6B[14;60H[?12l[?25h[?25l[m[38;5;130mthen[m[46;36H[1m[7m7B[14;61H[?12l[?25h[?25l[m[47;1H[K[47;1H=<SNR>85_SelectCompletion(1)[1m-- INSERT --[m[47;13H[K[15;5H[34m......[m[15;11H[K[16;9H[38;5;130mfi[m[16;11H[K[17;5H    [38;5;130mread[m irc
+[38;5;130m 18 [m    [34m#echo $irc[m[18;19H[K[19;1H[38;5;130m 19 done[m[19;9H[K[46;22H[1m[7m5/19[78%]Col:7Buf:#1[0][0x0]  [15;11H[?12l[?25h[?25l[m[15;5H      e[46;35H[1m[7m8B[15;12H[?12l[?25h[?25l[mc[46;35H[1m[7m9B[15;13H[?12l[?25h[?25l[mh[46;35H[1m[7m10Buf:#1[0][0x0][15;14H[?12l[?25h[?25l[m[38;5;130mecho[m[46;36H[1m[7m1B[15;15H[?12l[?25h[?25l[m[34m.[m[46;36H[1m[7m2B[15;16H[?12l[?25h[?25l[m[31m [m[38;5;130m"[m[16;5H[31m    fi[17;5H    read irc[18;5H    #echo [m[35m$irc[m[19;5H[31mdone[m[46;36H[1m[7m3B[15;17H[?12l[?25h[?25l[m[38;5;130m"[m[16;5H    [38;5;130mfi[m[17;5H    [38;5;130mread[m irc[18;5H    [34m#echo $irc[m[19;5H[38;5;130mdone[m[46;36H[1m[7m4B[15;18H[?12l[?25h[46;36H3Buf:#1[34][0x22][15;17H[?25l[m[31mP[m[38;5;130m"[m[46;36H[1m[7m4B[15;18H[?12l[?25h[?25l[m[31mO[m[38;5;130m"[m[46;36H[1m[7m5B[15;19H[?12l[?25h[?25l[m[31mN[m[38;5;130m"[m[46;36H[1m[7m6B[15;20H[?12l[?25h[?25l[m[31mG[m[38;5;130m"[m[46;36H[1m[7m7B[15;21H[?12l[?25h[46;36H8Buf:#1[0][0x0]   [15;22H[?25l[m[34m.[m[46;36H[1m[7m9B[15;23H[?12l[?25h[?25l[m[31m [m[38;5;130m>[m[46;35H[1m[7m20B[15;24H[?12l[?25h[?25l[m[38;5;130m>[m[46;36H[1m[7m1B[15;25H[?12l[?25h[?25l[m[34m.[m[46;36H[1m[7m2B[15;26H[?12l[?25h[?25l[m b[46;36H[1m[7m3B[15;27H[?12l[?25h[?25l[mo[46;36H[1m[7m4B[15;28H[?12l[?25h[?25l[mt[46;36H[1m[7m5B[15;29H[?12l[?25h[?25l[mf[46;36H[1m[7m6B[15;30H[?12l[?25h[?25l[mi[46;36H[1m[7m7B[15;31H[?12l[?25h[?25l[ml[46;36H[1m[7m8B[15;32H[?12l[?25h[?25l[me[46;36H[1m[7m9B[15;33H[?12l[?25h[46;22H6/19[84%]Col:7Buf:#1[0][0x0]  [16;11H[46;22H7/19[89%]Col:13Buf:#1[0][0x0][17;17H[46;22H8/19[94%]Col:15B[18;19H[46;36H4Buf:#1[99][0x63][18;18H[46;36H3Buf:#1[114][0x72][18;17H[46;36H2B[7C05][0x69][18;16H[46;36H1Buf:#1[36][0x24]  [18;15H[46;36H0B[7C2][0x20][18;14H[46;35H9Buf:#1[111][0x6F][18;13H[46;35H8B[7C04][0x68][18;12H[46;35H7Buf:#1[99][0x63]  [18;11H[46;35H6Buf:#1[101][0x65][18;10H[?25l[m[38;5;130mecho[m[31m [m[35m$irc[m[18;18H[K[46;35H[1m[7m5B[18;9H[?12l[?25h[m[47;1H[K[18;8H[?25l[46;35H[1m[7m4Buf:#1[32][0x20]  [18;8H[?12l[?25h[?25l[47;1H[m:[?12l[?25hx[?25l[?12l[?25h[?25l"bashbot.sh" 19L, 446C written
+[?1l>[?12l[?25h[?1049l]0;dondon@span:~/projects/finchd/bashbot[dondon@span bashbot]$ git add -a
+error: unknown switch `a'
+usage: git add [options] [--] <pathspec>...
+
+    -n, --dry-run         dry run
+    -v, --verbose         be verbose
+
+    -i, --interactive     interactive picking
+    -p, --patch           select hunks interactively
+    -e, --edit            edit current diff and apply
+    -f, --force           allow adding otherwise ignored files
+    -u, --update          update tracked files
+    -N, --intent-to-add   record only the fact that the path will be added later
+    -A, --all             add changes from all tracked and untracked files
+    --ignore-removal      ignore paths removed in the working tree (same as --no-all)
+    --refresh             don't add, only refresh the index
+    --ignore-errors       just skip files which cannot be added because of errors
+    --ignore-missing      check if - even missing - files are ignored in dry run
+
+]0;dondon@span:~/projects/finchd/bashbot[dondon@span bashbot]$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   bashbot.sh[m
+	[31mmodified:   be-a-bot[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;dondon@span:~/projects/finchd/bashbot[dond

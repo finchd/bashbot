@@ -11,6 +11,9 @@ tail -f botfile | nc irc.cat.pdx.edu 6667 | while true ; do
         echo "JOIN #notzombies" >> botfile
         started="yes"
     fi
+    if [ `echo $irc | cut -d ' ' -f 1` = "PING" ] ; then
+      echo "PONG" >> botfile
+    fi
     read irc
-    #echo $irc
+    echo $irc
 done
