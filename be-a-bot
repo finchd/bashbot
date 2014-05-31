@@ -1,0 +1,434 @@
+Script started on Fri 30 May 2014 06:56:27 PM PDT
+]0;dondon@span:~/projects/finchd/bashbot[dondon@span bashbot]$ nc iss.cat.pdx.edu:6667
+usage: nc [-46bCDdhjklnrStUuvZz] [-I length] [-i interval] [-O length]
+	  [-P proxy_username] [-p source_port] [-q seconds] [-s source]
+	  [-T toskeyword] [-V rtable] [-w timeout] [-X proxy_protocol]
+	  [-x proxy_address[:port]] [destination] [port]
+]0;dondon@span:~/projects/finchd/bashbot[dondon@span bashbot]$ nc iss.cat.pdx.edu:6667[C[C[1P6667 6667
+:iss.cat.pdx.edu NOTICE * :*** Looking up your hostname...
+:iss.cat.pdx.edu NOTICE * :*** Checking Ident
+:iss.cat.pdx.edu NOTICE * :*** No Ident response
+:iss.cat.pdx.edu NOTICE * :*** Couldn't look up your hostname
+HI
+USER botbot botbot :botbot
+:iss.cat.pdx.edu 461 * USER :Not enough parameters
+^[[A    USER botbot botbot ERROR :Closing Link: 127.0.0.1 (Connection timed out)
+]0;dondon@span:~/projects/finchd/bashbot[dondon@span bashbot]$ USER botbot botbot [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Knc iss.cat.pdx.edu 6667
+:iss.cat.pdx.edu NOTICE * :*** Looking up your hostname...
+:iss.cat.pdx.edu NOTICE * :*** Checking Ident
+:iss.cat.pdx.edu NOTICE * :*** Couldn't look up your hostname
+:iss.cat.pdx.edu NOTICE * :*** No Ident response
+HI
+USER botbot a a :   a :botbot
+NICK botbot
+:iss.cat.pdx.edu 001 botbot :Welcome to the CATIRC Internet Relay Chat Network botbot
+:iss.cat.pdx.edu 002 botbot :Your host is iss.cat.pdx.edu[iss.cat.pdx.edu/6667], running version charybdis-3.3.0
+:iss.cat.pdx.edu 003 botbot :This server was created Sat Dec 14 2013 at 05:21:43 PST
+:iss.cat.pdx.edu 004 botbot iss.cat.pdx.edu charybdis-3.3.0 DQRSZagilopswxz CFILOPQSbcefgijklmnopqrstvz bkloveqjfI
+:iss.cat.pdx.edu 005 botbot SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLOPQScgimnprstz CHANLIMIT=#:300 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=CATIRC KNOCK :are supported by this server
+:iss.cat.pdx.edu 005 botbot STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=18 MAXNICKLEN=18 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D :are supported by this server
+:iss.cat.pdx.edu 005 botbot MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:12,NOTICE:12,ACCEPT:,MONITOR: EXTBAN=$,ajrsx WHOX CLIENTVER=3.0 :are supported by this server
+:iss.cat.pdx.edu 251 botbot :There are 1 users and 333 invisible on 3 servers
+:iss.cat.pdx.edu 252 botbot 6 :IRC Operators online
+:iss.cat.pdx.edu 253 botbot 1 :unknown connection(s)
+:iss.cat.pdx.edu 254 botbot 266 :channels formed
+:iss.cat.pdx.edu 255 botbot :I have 166 clients and 1 servers
+:iss.cat.pdx.edu 265 botbot 166 194 :Current local users 166, max 194
+:iss.cat.pdx.edu 266 botbot 334 386 :Current global users 334, max 386
+:iss.cat.pdx.edu 250 botbot :Highest connection count: 195 (194 clients) (40474 connections received)
+:iss.cat.pdx.edu 375 botbot :- iss.cat.pdx.edu Message of the Day - 
+:iss.cat.pdx.edu 372 botbot :-  
+:iss.cat.pdx.edu 372 botbot :- Welcome to irc.cat.pdx.edu, the IRC server for the College of
+:iss.cat.pdx.edu 372 botbot :- Engineering and Computer Science at Portland State University.
+:iss.cat.pdx.edu 372 botbot :-  
+:iss.cat.pdx.edu 372 botbot :- ****************** Acceptable Use Policy *********************
+:iss.cat.pdx.edu 372 botbot :- *                                                            *
+:iss.cat.pdx.edu 372 botbot :- * o The server, IRC.CAT.PDX.EDU, is intended to be used by   *
+:iss.cat.pdx.edu 372 botbot :- *   the online community in the College of Engineering       *
+:iss.cat.pdx.edu 372 botbot :- *   and Computer Science as a means of communication and     *
+:iss.cat.pdx.edu 372 botbot :- *   support. While anyone can join and use the server,       *
+:iss.cat.pdx.edu 372 botbot :- *   the administrators of this server (the Computer Action   *
+:iss.cat.pdx.edu 372 botbot :- *   Team) reserve the right to remove or restrict access of  *
+:iss.cat.pdx.edu 372 botbot :- *   disruptive users.                                        *
+:iss.cat.pdx.edu 372 botbot :- *                                                            *
+:iss.cat.pdx.edu 372 botbot :- * o Server admins may, at their discretion, ask a user to    *
+:iss.cat.pdx.edu 372 botbot :- *   change their behavior, remove the user from a channel    *
+:iss.cat.pdx.edu 372 botbot :- *   or the server, or assume ownership of channels a user    *
+:iss.cat.pdx.edu 372 botbot :- *   has created in order to preserve the utility of the      *
+:iss.cat.pdx.edu 372 botbot :- *   server.  The administrative rights may be extended to    *
+:iss.cat.pdx.edu 372 botbot :- *   deal with situations as needed in order to maintain the  *
+:iss.cat.pdx.edu 372 botbot :- *   communication and support functions the server provides  *
+:iss.cat.pdx.edu 372 botbot :- *   to the community.                                        *
+:iss.cat.pdx.edu 372 botbot :- *                                                            *
+:iss.cat.pdx.edu 372 botbot :- * o Users are prohibited from impersonating a server admin,  *
+:iss.cat.pdx.edu 372 botbot :- *   support person, instructor, or staff member of the       *
+:iss.cat.pdx.edu 372 botbot :- *   College of Engineering and Computer Science.             *
+:iss.cat.pdx.edu 372 botbot :- *                                                            *
+:iss.cat.pdx.edu 372 botbot :- * o Users may not create channels advertised as an official  *
+:iss.cat.pdx.edu 372 botbot :- *   channel for any College resources or programs unless     *
+:iss.cat.pdx.edu 372 botbot :- *   they have been specifically delegated that authority by  *
+:iss.cat.pdx.edu 372 botbot :- *   the College.                                             *
+:iss.cat.pdx.edu 372 botbot :- *                                                            *
+:iss.cat.pdx.edu 372 botbot :- * o In addition to this Acceptable Use Policy the users of   *
+:iss.cat.pdx.edu 372 botbot :- *   this server are required to follow the more general user *
+:iss.cat.pdx.edu 372 botbot :- *   policies detailed at http://cat.pdx.edu/guidelines.html. *
+:iss.cat.pdx.edu 372 botbot :- **************************************************************
+:iss.cat.pdx.edu 372 botbot :-  
+:iss.cat.pdx.edu 372 botbot :- If you need assistance or have questions please contact one
+:iss.cat.pdx.edu 372 botbot :- of the admins (anakha, Epitrope, johnj, MaddHatter,
+:iss.cat.pdx.edu 372 botbot :- nibalizer, pilgrimd, or Wren), ask in #support, or email
+:iss.cat.pdx.edu 372 botbot :- support@cat.pdx.edu.
+:iss.cat.pdx.edu 372 botbot :-  
+:iss.cat.pdx.edu 376 botbot :End of /MOTD command.
+:botbot MODE botbot :+iw
+JOIN #notents
+:botbot!~botbot@131.252.141.90 JOIN #notents
+:iss.cat.pdx.edu 353 botbot @ #notents :botbot hunnerbot MaddHatter capybara coco dondon @thymebot
+:iss.cat.pdx.edu 366 botbot #notents :End of /NAMES list.
+:Anyong!hasbunj@rita.cat.pdx.edu JOIN #notents
+:manualcat!~mancat@2610:10:20:978::237 JOIN #notents
+:piratezzzz!geonicol@rita.cat.pdx.edu JOIN #notents
+:ploppy!bortele@ruby.cat.pdx.edu JOIN #notents
+:ghost!jluedlof@stargate.cat.pdx.edu JOIN #notents
+:relsqui!finnre@stargate.cat.pdx.edu JOIN #notents
+:james!salsa@rita.cat.pdx.edu JOIN #notents
+:pipp!alder@stargate.cat.pdx.edu JOIN #notents
+:kekbot!masont@ruby.cat.pdx.edu JOIN #notents
+:manualcat!~mancat@2610:10:20:978::237 PRIVMSG #notents :hi to braindump
+:AatroxBot!aarong@rita.cat.pdx.edu JOIN #notents
+:pipp!alder@stargate.cat.pdx.edu PRIVMSG #notents :^_^
+:sundint!sundint@rita.cat.pdx.edu JOIN #notents
+:kekbot!masont@ruby.cat.pdx.edu PRIVMSG #notents :hi kek ke kek
+PRIVMSG #noten:relsqui!finnre@stargate.cat.pdx.edu PRIVMSG #notents :: stneton# GSMVIRP iuqsler:
+ts ::thymebot!mwilliam@rita.cat.pdx.edu PRIVMSG #notents :heh
+bump:AatroxBot!aarong@rita.cat.pdx.edu NOTICE #notents :kek
+
+:manualcat!~mancat@2610:10:20:978::237 PART #notents
+:kekbot!masont@ruby.cat.pdx.edu PRIVMSG #notents :kek
+:krinkle!krinkle@zim.cat.pdx.edu JOIN #notents
+:Aatrox!aarong@rita.cat.pdx.edu JOIN #notents
+:ploppy!bortele@ruby.cat.pdx.edu PRIVMSG #notents :ploppy!
+:relsqui!finnre@stargate.cat.pdx.edu PRIVMSG #notents :only one class of cats was *called* trolls, but really, we're all trolls in spirit
+:Pashalik!henshaw@rita.cat.pdx.edu JOIN #notents
+:Anteater!ssean@rita.cat.pdx.edu JOIN #notents
+:coco!~coco@131.252.102.40 PRIVMSG #notents :WAT
+:Anteater!ssean@rita.cat.pdx.edu PRIVMSG #notents : :[
+:MaddHatter!~maddhatt@oper.nonexistent.cat.pdx.edu PRIVMSG #notents :hunnerbot: you need to PONG
+:kekbot!masont@ruby.cat.pdx.edu PRIVMSG #notents :nuh uh we're ents
+:ploppy!bortele@ruby.cat.pdx.edu PRIVMSG #notents :PONG
+:piratezzzz!geonicol@rita.cat.pdx.edu PRIVMSG #notents :hello?
+PING :iss.cat.pdx.edu
+:hunnerbot!hunner@rita.cat.pdx.edu PRIVMSG #notents :Hi!
+:AatroxBot!aarong@rita.cat.pdx.edu PRIVMSG #notents :i
+PONG
+:thymebot!mwilliam@rita.cat.pdx.edu PRIVMSG #notents :ello
+:kekbot!masont@ruby.cat.pdx.edu PRIVMSG #notents :hi
+:Pashalik!henshaw@rita.cat.pdx.edu PRIVMSG #notents :hi
+:Anyong!hasbunj@rita.cat.pdx.edu QUIT :Ping timeout: 240 seconds
+:thymebot!mwilliam@rita.cat.pdx.edu PRIVMSG #notents :ello
+:hunnerbot!hunner@rita.cat.pdx.edu PRIVMSG #notents :Hi!
+:ryan!~ryan52@static-50-53-12-198.bvtn.or.frontiernet.net JOIN #notents
+:kekbot!masont@ruby.cat.pdx.edu PRIVMSG #notents :I see how it is, botfather acknowledges you
+:MaddHatter!~maddhatt@oper.nonexistent.cat.pdx.edu PRIVMSG #notents :this is why you should use "openssl s_client" instead of nc
+:Anyong!hasbunj@rita.cat.pdx.edu JOIN #notents
+:Pashalik!henshaw@rita.cat.pdx.edu PRIVMSG #notents :Thank
+:Anteater!ssean@rita.cat.pdx.edu PRIVMSG #notents : daaaa
+:casper!jluedlof@rita.cat.pdx.edu JOIN #notents
+:casper!jluedlof@rita.cat.pdx.edu PART #notents
+:coco!~coco@131.252.102.40 PRIVMSG #notents :Dat wPRPONG
+:relsqui!finnre@stargate.cat.pdx.edu PRIVMSG #notents :this is even more peanut-gallery-y than most braindumps
+:coco!~coco@131.252.102.40 PRIVMSG #notents :LOL
+:nibalizer!nibz@destiny.cat.pdx.edu JOIN #notents
+:AatroxBot!aarong@rita.cat.pdx.edu PRIVMSG #notents :boo
+:nibalizer!nibz@destiny.cat.pdx.edu PRIVMSG #notents :wooo
+:james!salsa@rita.cat.pdx.edu PRIVMSG #notents :hello
+:nibalizer!nibz@destiny.cat.pdx.edu PRIVMSG #notents :wpa wupplicant
+:nibalizer!nibz@destiny.cat.pdx.edu PRIVMSG #notents :actually works!
+:Pashalik!henshaw@rita.cat.pdx.edu PRIVMSG #notents :this
+PING :iss.cat.pdx.edu
+:Anteater!ssean@rita.cat.pdx.edu PRIVMSG #notents : aeiou
+:nibalizer!nibz@destiny.cat.pdx.edu PRIVMSG #notents :notice?
+:hunnerbot!hunner@rita.cat.pdx.edu PART #notents
+:piratezzzz!geonicol@rita.cat.pdx.edu PRIVMSG #notents : having to type PRIVMSG every time makes it imporatnat to consdiser if you really have anything to say.
+:AatroxBot!aarong@rita.cat.pdx.edu PRIVMSG #notents :i
+:kekbot!masont@ruby.cat.pdx.edu PRIVMSG #notents :nibz is here, the progress is over
+:Anyong!hasbunj@rita.cat.pdx.edu PART #notents
+:coco!~coco@131.252.102.40 QUIT :Remote host closed the connection
+:hunnerbot!hunner@rita.cat.pdx.edu JOIN #notents
+PART :james!salsa@rita.cat.pdx.edu PRIVMSG #notents :hello
+:it's only a :Aatrox!aarong@rita.cat.pdx.edu PRIVMSG #notents :hi
+:piratezzzz!geonicol@rita.cat.pdx.edu PRIVMSG #notents :we got the powa!
+flesh w:Pashalik!henshaw@rita.cat.pdx.edu PRIVMSG #notents :this
+ound!
+:iss.cat.pdx.edu 403 botbot it's only a flesh wound! :No such channel
+:kekbot!masont@ruby.cat.pdx.edu QUIT :Remote host closed the connection
+:ploppy!bortele@ruby.cat.pdx.edu QUIT :Ping timeout: 240 seconds
+^[[A^[[D        PART :Aatrox!aarong@rita.cat.pdx.edu PRIVMSG #notents :kekbot++
+#notents :it's only a flesh:hunnerbot!hunner@rita.cat.pdx.edu QUIT :Remote host closed the connection
+ wou  ound!
+:botbot!~botbot@131.252.141.90 PART #notents :it's only a flesh wound!
+QUIT
+:botbot!~botbot@131.252.141.90 QUIT :Quit: botbot
+ERROR :Closing Link: 131.252.141.90 (Quit: botbot)
+]0;dondon@span:~/projects/finchd/bashbot[dondon@span bashbot]$ openssl s_client
+connect: Connection refused
+connect:errno=111
+]0;dondon@span:~/projects/finchd/bashbot[dondon@span bashbot]$ openssl s_client -h
+unknown option -h
+usage: s_client args
+
+ -host host     - use -connect instead
+ -port port     - use -connect instead
+ -connect host:port - who to connect to (default is localhost:4433)
+ -verify arg   - turn on peer certificate verification
+ -cert arg     - certificate file to use, PEM format assumed
+ -certform arg - certificate format (PEM or DER) PEM default
+ -key arg      - Private key file to use, in cert file if
+                 not specified but cert file is.
+ -keyform arg  - key format (PEM or DER) PEM default
+ -pass arg     - private key file pass phrase source
+ -CApath arg   - PEM format directory of CA's
+ -CAfile arg   - PEM format file of CA's
+ -reconnect    - Drop and re-make the connection with the same Session-ID
+ -pause        - sleep(1) after each read(2) and write(2) system call
+ -showcerts    - show all certificates in the chain
+ -debug        - extra output
+ -msg          - Show protocol messages
+ -nbio_test    - more ssl protocol testing
+ -state        - print the 'ssl' states
+ -nbio         - Run with non-blocking IO
+ -crlf         - convert LF from terminal into CRLF
+ -quiet        - no s_client output
+ -ign_eof      - ignore input eof (default when -quiet)
+ -no_ign_eof   - don't ignore input eof
+ -psk_identity arg - PSK identity
+ -psk arg      - PSK in hex (without 0x)
+ -srpuser user     - SRP authentification for 'user'
+ -srppass arg      - password for 'user'
+ -srp_lateuser     - SRP username into second ClientHello message
+ -srp_moregroups   - Tolerate other than the known g N values.
+ -srp_strength int - minimal mength in bits for N (default 1024).
+ -ssl2         - just use SSLv2
+ -ssl3         - just use SSLv3
+ -tls1_2       - just use TLSv1.2
+ -tls1_1       - just use TLSv1.1
+ -tls1         - just use TLSv1
+ -dtls1        - just use DTLSv1
+ -mtu          - set the link layer MTU
+ -no_tls1_2/-no_tls1_1/-no_tls1/-no_ssl3/-no_ssl2 - turn off that protocol
+ -bugs         - Switch on all SSL implementation bug workarounds
+ -serverpref   - Use server's cipher preferences (only SSLv2)
+ -cipher       - preferred cipher to use, use the 'openssl ciphers'
+                 command to see what is available
+ -starttls prot - use the STARTTLS command before starting TLS
+                 for those protocols that support it, where
+                 'prot' defines which one to assume.  Currently,
+                 only "smtp", "pop3", "imap", "ftp" and "xmpp"
+                 are supported.
+ -engine id    - Initialise and use the specified engine
+ -rand file:file:...
+ -sess_out arg - file to write SSL session to
+ -sess_in arg  - file to read SSL session from
+ -servername host  - Set TLS extension servername in ClientHello
+ -tlsextdebug      - hex dump of all TLS extensions received
+ -status           - request certificate status from server
+ -no_ticket        - disable use of RFC4507bis session tickets
+ -nextprotoneg arg - enable NPN extension, considering named protocols supported (comma-separated list)
+ -legacy_renegotiation - enable use of legacy renegotiation (dangerous)
+ -use_srtp profiles - Offer SRTP key management with a colon-separated profile list
+ -keymatexport label   - Export keying material using label
+ -keymatexportlen len  - Export len bytes of keying material (default 20)
+]0;dondon@span:~/projects/finchd/bashbot[dondon@span bashbot]$ openssl s_client -h [Kost iss.cat.pdx.edu -port 6667
+CONNECTED(00000003)
+139931139049104:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:s23_clnt.c:787:
+---
+no peer certificate available
+---
+No client certificate CA names sent
+---
+SSL handshake has read 7 bytes and written 517 bytes
+---
+New, (NONE), Cipher is (NONE)
+Secure Renegotiation IS NOT supported
+Compression: NONE
+Expansion: NONE
+---
+]0;dondon@span:~/projects/finchd/bashbot[dondon@span bashbot]$ openssl s_client -host iss.cat.pdx.edu -port 6667[K[Knc iss.cat.pdx.edu 6667:6667mv webapps.pdf cs410netsec/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kmv webapps.pdf cs410netsec/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4Pnc iss.cat.pdx.edu:6667 6667[7Popenssl s_client -host iss.cat.pdx.edu -port 6667[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kopenssl s_client -host iss.cat.pdx.edu -port 6667[1P797
+CONNECTED(00000003)
+depth=2 C = BE, O = GlobalSign nv-sa, OU = Root CA, CN = GlobalSign Root CA
+verify error:num=19:self signed certificate in certificate chain
+verify return:0
+---
+Certificate chain
+ 0 s:/C=US/ST=Oregon/L=Portland/O=Portland State University/CN=irc.cat.pdx.edu
+   i:/C=BE/O=GlobalSign nv-sa/CN=GlobalSign Organization Validation CA - SHA256 - G2
+ 1 s:/C=BE/O=GlobalSign nv-sa/CN=GlobalSign Organization Validation CA - SHA256 - G2
+   i:/C=BE/O=GlobalSign nv-sa/OU=Root CA/CN=GlobalSign Root CA
+ 2 s:/C=BE/O=GlobalSign nv-sa/OU=Root CA/CN=GlobalSign Root CA
+   i:/C=BE/O=GlobalSign nv-sa/OU=Root CA/CN=GlobalSign Root CA
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIIGNjCCBR6gAwIBAgISESFbe/aVoGyWEY9V94iCIcGUMA0GCSqGSIb3DQEBCwUA
+MGYxCzAJBgNVBAYTAkJFMRkwFwYDVQQKExBHbG9iYWxTaWduIG52LXNhMTwwOgYD
+VQQDEzNHbG9iYWxTaWduIE9yZ2FuaXphdGlvbiBWYWxpZGF0aW9uIENBIC0gU0hB
+MjU2IC0gRzIwHhcNMTQwNDA4MTczNzA1WhcNMTQxMjE4MjE0NTAwWjBvMQswCQYD
+VQQGEwJVUzEPMA0GA1UECBMGT3JlZ29uMREwDwYDVQQHEwhQb3J0bGFuZDEiMCAG
+A1UEChMZUG9ydGxhbmQgU3RhdGUgVW5pdmVyc2l0eTEYMBYGA1UEAxMPaXJjLmNh
+dC5wZHguZWR1MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA5UiDCF9x
+ZAaA6dAzG7Yd5zjHwyoFs/M24Qe6TuvXtp3vwHxY99FIoAmkfgaSRJmA6DsCy1x7
+AKPls2lBsQZa4LrbNqt7CoYHTHtMgnSStVBP8HD+iKI7zW1dlE745rw5/crRTWEb
+9zk65V0d+tTO5yI3HIIO6sECkj+9tzfVT40M0bXlupm/JqV51Uyf0l6NghLiHZSp
+jErK7oShmnR4DdQUxvp5UB4dRErMeBAzd2cTg8wOfbODhup5OCeHEKdPqEi25U71
+2XfF/ijxgHuQAyL04MJXldss41LGR5wd2lvX2rhv3XoIu5/h28sb77tIh/z8JGEH
+FgIX1g/swzU2akauDTLR0/fTEgeZZ/NV5MtkYyE/Fo77i4uiVGas9gF82If8Riea
+6WnlpBn/0tZnMGX3WS38nm7FufoqynDDggrLekF5PLlQMiYKqnh35g+anJse5ebi
+UTFu/TxaDWaBFlBFRxetktNtg0G/ZfhngEU6ZDvadPPyFFb6AalMHKvKyYirnv8J
+FFS7c+WQdwR/X3R8dT+mjUaT0qkBNZUPkDq/odtW9Kl7w7koyD0aeektmie//JIe
+164gxt9zUqbolVf63sHuRXc81TKDKXEaw0ZKBGpv7h8Tu/4taG9jMNJIoe0IA5JZ
+Dyhf0mT/YEgixd3K1N7EY2QMIdRleloNX10CAwEAAaOCAdMwggHPMA4GA1UdDwEB
+/wQEAwIFoDBJBgNVHSAEQjBAMD4GBmeBDAECAjA0MDIGCCsGAQUFBwIBFiZodHRw
+czovL3d3dy5nbG9iYWxzaWduLmNvbS9yZXBvc2l0b3J5LzAaBgNVHREEEzARgg9p
+cmMuY2F0LnBkeC5lZHUwCQYDVR0TBAIwADAdBgNVHSUEFjAUBggrBgEFBQcDAQYI
+KwYBBQUHAwIwSQYDVR0fBEIwQDA+oDygOoY4aHR0cDovL2NybC5nbG9iYWxzaWdu
+LmNvbS9ncy9nc29yZ2FuaXphdGlvbnZhbHNoYTJnMi5jcmwwgaAGCCsGAQUFBwEB
+BIGTMIGQME0GCCsGAQUFBzAChkFodHRwOi8vc2VjdXJlLmdsb2JhbHNpZ24uY29t
+L2NhY2VydC9nc29yZ2FuaXphdGlvbnZhbHNoYTJnMnIxLmNydDA/BggrBgEFBQcw
+AYYzaHR0cDovL29jc3AyLmdsb2JhbHNpZ24uY29tL2dzb3JnYW5pemF0aW9udmFs
+c2hhMmcyMB0GA1UdDgQWBBSowHxQzrQxoe9r8WN8dqz75OZZETAfBgNVHSMEGDAW
+gBSW3mHxvRwWKVMcwMx9O4MAQOYafDANBgkqhkiG9w0BAQsFAAOCAQEAUNaNhwqR
+atWdeaGbJAR65uBXv4pc1N6NgnMCDFuB9JBjH3Fb4SDHNuOwLf9Q5d+Q6lAQGjJs
+02yNUEFspA8tfB1FSc7TkdbnL/Aj8oEvUO2Z9i3iJjresln+U/LzoHiMs73uNrwf
+X1+TPNwoMubIOPewTLLXgXsoZhoaZ9denIL27NZZ42bi5DuyW0Z4VPsyjSj6W9Kj
+/O08dzhPvLRH+01GFD3YAiWZBpwfglOxCjdD87PNyzytM7fR3CRq/7QrZEmnyTL0
+A+ejCEOOnEtuJ+SgP/Vqgd4yl9+izqI/5snRgYpT/uYNoQpK83cw++DRpPFB74HU
+VHxaBg/PEyYzfg==
+-----END CERTIFICATE-----
+subject=/C=US/ST=Oregon/L=Portland/O=Portland State University/CN=irc.cat.pdx.edu
+issuer=/C=BE/O=GlobalSign nv-sa/CN=GlobalSign Organization Validation CA - SHA256 - G2
+---
+No client certificate CA names sent
+---
+SSL handshake has read 5025 bytes and written 847 bytes
+---
+New, TLSv1/SSLv3, Cipher is DHE-RSA-AES256-GCM-SHA384
+Server public key is 4096 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+SSL-Session:
+    Protocol  : TLSv1.2
+    Cipher    : DHE-RSA-AES256-GCM-SHA384
+    Session-ID: 11A0725D1882FCC4D986EB688FA320356BABFDC3E6CE02FF85D6B0910D33BB7D
+    Session-ID-ctx: 
+    Master-Key: 39C2C3871BF5534E80473E73249192CB378474010378B3F40BCA3BA5EEC534D8DF35691CD43F6CD5E7A0F1988BA42131
+    Key-Arg   : None
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 300 (seconds)
+    TLS session ticket:
+    0000 - 38 3b 7d 4c 97 35 51 78-f2 7d cd aa d2 54 7c 14   8;}L.5Qx.}...T|.
+    0010 - d3 e0 a8 7b 1b 40 c5 97-10 a2 28 fe 45 a8 ea 6e   ...{.@....(.E..n
+    0020 - 4b fe 33 7c 6e 12 bc c3-b8 93 11 0f ae 12 c3 f2   K.3|n...........
+    0030 - e8 8a 4c 14 99 5a fa 8d-fa 6b 97 1c 0a 5a 3e 8e   ..L..Z...k...Z>.
+    0040 - 2d c7 5e b0 39 e8 f0 ed-f7 35 02 fb 4a be 50 a5   -.^.9....5..J.P.
+    0050 - 9b e2 c9 9e 24 ce 5d 9c-86 55 a1 10 8e 1f 17 1e   ....$.]..U......
+    0060 - b8 a8 13 8b b5 9f 9e 63-6e de 9a 3a df 9f 2c d4   .......cn..:..,.
+    0070 - 4c 6b ef 4f 0e 47 37 9b-6e 79 bc e3 0a fb 29 dc   Lk.O.G7.ny....).
+    0080 - c9 7d 76 a4 2b 35 f4 a0-53 92 3c 7b 8f 4a 07 28   .}v.+5..S.<{.J.(
+    0090 - 20 f5 92 a5 d6 b6 c5 47-5f a8 a1 b4 69 6e ba 9f    ......G_...in..
+
+    Start Time: 1401503222
+    Timeout   : 300 (sec)
+    Verify return code: 19 (self signed certificate in certificate chain)
+---
+:iss.cat.pdx.edu NOTICE * :*** Looking up your hostname...
+:iss.cat.pdx.edu NOTICE * :*** Checking Ident
+:iss.cat.pdx.edu NOTICE * :*** Couldn't look up your hostname
+:iss.cat.pdx.edu NOTICE * :*** No Ident response
+HI
+USER botbot a a :botbot
+NICK botbot
+:iss.cat.pdx.edu 001 botbot :Welcome to the CATIRC Internet Relay Chat Network botbot
+:iss.cat.pdx.edu 002 botbot :Your host is iss.cat.pdx.edu[iss.cat.pdx.edu/6697], running version charybdis-3.3.0
+:iss.cat.pdx.edu 003 botbot :This server was created Sat Dec 14 2013 at 05:21:43 PST
+:iss.cat.pdx.edu 004 botbot iss.cat.pdx.edu charybdis-3.3.0 DQRSZagilopswxz CFILOPQSbcefgijklmnopqrstvz bkloveqjfI
+:iss.cat.pdx.edu 005 botbot SAFELIST ELIST=CTU CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLOPQScgimnprstz CHANLIMIT=#:300 PREFIX=(ov)@+ MAXLIST=bqeI:100 MODES=4 NETWORK=CATIRC KNOCK :are supported by this server
+:iss.cat.pdx.edu 005 botbot STATUSMSG=@+ CALLERID=g CASEMAPPING=rfc1459 CHARSET=ascii NICKLEN=18 MAXNICKLEN=18 CHANNELLEN=50 TOPICLEN=390 ETRACE CPRIVMSG CNOTICE DEAF=D :are supported by this server
+:iss.cat.pdx.edu 005 botbot MONITOR=100 FNC TARGMAX=NAMES:1,LIST:1,KICK:1,WHOIS:1,PRIVMSG:12,NOTICE:12,ACCEPT:,MONITOR: EXTBAN=$,ajrsx WHOX CLIENTVER=3.0 :are supported by this server
+:iss.cat.pdx.edu 251 botbot :There are 1 users and 324 invisible on 3 servers
+:iss.cat.pdx.edu 252 botbot 6 :IRC Operators online
+:iss.cat.pdx.edu 254 botbot 267 :channels formed
+:iss.cat.pdx.edu 255 botbot :I have 158 clients and 1 servers
+:iss.cat.pdx.edu 265 botbot 158 194 :Current local users 158, max 194
+:iss.cat.pdx.edu 266 botbot 325 386 :Current global users 325, max 386
+:iss.cat.pdx.edu 250 botbot :Highest connection count: 195 (194 clients) (40503 connections received)
+:iss.cat.pdx.edu 375 botbot :- iss.cat.pdx.edu Message of the Day - 
+:iss.cat.pdx.edu 372 botbot :-  
+:iss.cat.pdx.edu 372 botbot :- Welcome to irc.cat.pdx.edu, the IRC server for the College of
+:iss.cat.pdx.edu 372 botbot :- Engineering and Computer Science at Portland State University.
+:iss.cat.pdx.edu 372 botbot :-  
+:iss.cat.pdx.edu 372 botbot :- ****************** Acceptable Use Policy *********************
+:iss.cat.pdx.edu 372 botbot :- *                                                            *
+:iss.cat.pdx.edu 372 botbot :- * o The server, IRC.CAT.PDX.EDU, is intended to be used by   *
+:iss.cat.pdx.edu 372 botbot :- *   the online community in the College of Engineering       *
+:iss.cat.pdx.edu 372 botbot :- *   and Computer Science as a means of communication and     *
+:iss.cat.pdx.edu 372 botbot :- *   support. While anyone can join and use the server,       *
+:iss.cat.pdx.edu 372 botbot :- *   the administrators of this server (the Computer Action   *
+:iss.cat.pdx.edu 372 botbot :- *   Team) reserve the right to remove or restrict access of  *
+:iss.cat.pdx.edu 372 botbot :- *   disruptive users.                                        *
+:iss.cat.pdx.edu 372 botbot :- *                                                            *
+:iss.cat.pdx.edu 372 botbot :- * o Server admins may, at their discretion, ask a user to    *
+:iss.cat.pdx.edu 372 botbot :- *   change their behavior, remove the user from a channel    *
+:iss.cat.pdx.edu 372 botbot :- *   or the server, or assume ownership of channels a user    *
+:iss.cat.pdx.edu 372 botbot :- *   has created in order to preserve the utility of the      *
+:iss.cat.pdx.edu 372 botbot :- *   server.  The administrative rights may be extended to    *
+:iss.cat.pdx.edu 372 botbot :- *   deal with situations as needed in order to maintain the  *
+:iss.cat.pdx.edu 372 botbot :- *   communication and support functions the server provides  *
+:iss.cat.pdx.edu 372 botbot :- *   to the community.                                        *
+:iss.cat.pdx.edu 372 botbot :- *                                                            *
+:iss.cat.pdx.edu 372 botbot :- * o Users are prohibited from impersonating a server admin,  *
+:iss.cat.pdx.edu 372 botbot :- *   support person, instructor, or staff member of the       *
+:iss.cat.pdx.edu 372 botbot :- *   College of Engineering and Computer Science.             *
+:iss.cat.pdx.edu 372 botbot :- *                                                            *
+:iss.cat.pdx.edu 372 botbot :- * o Users may not create channels advertised as an official  *
+:iss.cat.pdx.edu 372 botbot :- *   channel for any College resources or programs unless     *
+:iss.cat.pdx.edu 372 botbot :- *   they have been specifically delegated that authority by  *
+:iss.cat.pdx.edu 372 botbot :- *   the College.                                             *
+:iss.cat.pdx.edu 372 botbot :- *                                                            *
+:iss.cat.pdx.edu 372 botbot :- * o In addition to this Acceptable Use Policy the users of   *
+:iss.cat.pdx.edu 372 botbot :- *   this server are required to follow the more general user *
+:iss.cat.pdx.edu 372 botbot :- *   policies detailed at http://cat.pdx.edu/guidelines.html. *
+:iss.cat.pdx.edu 372 botbot :- **************************************************************
+:iss.cat.pdx.edu 372 botbot :-  
+:iss.cat.pdx.edu 372 botbot :- If you need assistance or have questions please contact one
+:iss.cat.pdx.edu 372 botbot :- of the admins (anakha, Epitrope, johnj, MaddHatter,
+:iss.cat.pdx.edu 372 botbot :- nibalizer, pilgrimd, or Wren), ask in #support, or email
+:iss.cat.pdx.edu 372 botbot :- support@cat.pdx.edu.
+:iss.cat.pdx.edu 372 botbot :-  
+:iss.cat.pdx.edu 376 botbot :End of /MOTD command.
+:botbot MODE botbot :+Ziw
+JOIN #notents
+:botbot!~botbot@131.252.141.90 JOIN #notents
+:iss.cat.pdx.edu 353 botbot @ #notents :botbot thymebot hooferboof Ant dom Pash nibalizer ryan Aatrox krinkle pipp relsqui ghost MaddHatter capybara dondon
+:iss.cat.pdx.edu 366 botbot #notents :End of /NAMES list.
+:thymebot!~thyme@2610:10:20:978:209:3dff:fe11:e20 NICK :thyme
+:AatroxBot!aarong@rita.cat.pdx.edu JOIN #notents
+:neeeeeeeeeee!~neeeeeeee@131.252.102.40 JOIN #notents
+:neeeeeeeeeee!~neeeeeeee@131.252.102.40 QUIT :Remote host closed the connection
+:piratez!gcnicol@stargate.cat.pdx.edu JOIN #notents
+:hunnerbot!hunner@rita.cat.pdx.edu JOIN #notents
+:Anteater!ssean@rita.cat.pdx.edu JOIN #notents
+:neeeeeeeeeee!~neeee@131.252.102.40 JOIN #notents
+:neeeeeeeeeee!~neeee@131.252.102.40 QUIT :Remote host closed the connection
+:Anteater!ssean@rita.cat.pdx.edu QUIT :Remote host closed the connection
+PART #notents :ploppy-bot!bortele@ruby.cat.pdx.edu JOIN #notents
+:dom!masont@serenity.cat.pdx.edu PART #notents
+:hunnerbot!hunner@rita.cat.pdx.edu QUIT :Remote host closed the connection
+ :  It's onlay   t    y a flea sh wound!
+:botbot!~botbot@131.252.141.90 PART #notents
+QUIT
+DONE
+]0;dondon@span:~/projects/finchd/bashbot[dondon@span bashbot]$ ls
+LICENSE  README
