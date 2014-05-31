@@ -20,6 +20,7 @@ tail -f botfile | nc irc.cat.pdx.edu 6667 | while true ; do
       echo "PONG" >> botfile
     fi
     read irc
+    echo "<-- $irc"
     # parse msg fields
     nick=`echo $irc | cut -d '!' -f 1 | tr -d :`
     cmd=`echo $irc | cut -d ' ' -f 2`
@@ -32,7 +33,7 @@ tail -f botfile | nc irc.cat.pdx.edu 6667 | while true ; do
     # reaction to !cmds
     if [ "`echo ${botcommand} | cut -c1`" = '!' ] ; then
       string="PRIVMSG #notents :Got command \"${botcommand}\" from ${nick} on ${chan} with args \"${botargs}\""
-      case #botcommand in
+      case $botcommand in
         "!add")   list="$botargs $list "
         "!list")  echo "List is ${list}"
         "!clear") list=""
