@@ -1,14 +1,19 @@
 #!/usr/bin/env bash
 
+function send {
+    echo "--> $1"
+    echo "$1" >> botfile
+}
+
 line=""
 started=""
 rm botfile
 mkfifo botfile
 tail -f botfile | nc irc.cat.pdx.edu 6667 | while true ; do
     if [ -z $started ] ; then
-        echo "USER botbot 0 botbot :I iz a bot" > botfile
-        echo "NICK botbot" >> botfile
-        echo "JOIN #notents" >> botfile
+        send "USER botbot 0 botbot :I iz a bot"
+        send "NICK botbot"
+        send "JOIN #notents"
         started="yes"
     fi
     if [ "`echo $irc | cut -d ' ' -f 1`" = "PING" ] ; then
@@ -32,6 +37,7 @@ tail -f botfile | nc irc.cat.pdx.edu 6667 | while true ; do
         "!list")  echo "List is ${list}"
         "!clear") list=""
       esac
+      echo $string
     fi
 
     if [ "${cmd}" = "PRIVMSG" ] ; then
