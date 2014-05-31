@@ -6,8 +6,8 @@ rm botfile
 mkfifo botfile
 tail -f botfile | nc irc.cat.pdx.edu 6667 | while true ; do
     if [ -z $started ] ; then
-        echo "USER bdbot 0 bdbot :I iz a bot" > botfile
-        echo "NICK bdbot" >> botfile
+        echo "USER botbot 0 botbot :I iz a bot" > botfile
+        echo "NICK botbot" >> botfile
         echo "JOIN #notzombies" >> botfile
         started="yes"
     fi
