@@ -1490,4 +1490,196 @@ unexpected EOF while looking for matching ``'[46;33H[1m[7m8B[17;44H[?12l[?
 [38;5;130m 21 [m    [38;5;130mfi
  22 [m    [38;5;130mread[m irc
 [38;5;130m 23 [m    [34m# parse msg fields[m
-[38;5;130m 24 [m    [36mnick[m=[35m`[m[38;5;130mecho[m[31m [m[35m$irc[m[31m [m[35m| cut -d [m[38;5;130m'[m[31m![m[38;5;130m'[m[35m -f [m[31m1[m
+[38;5;130m 24 [m    [36mnick[m=[35m`[m[38;5;130mecho[m[31m [m[35m$irc[m[31m [m[35m| cut -d [m[38;5;130m'[m[31m![m[38;5;130m'[m[35m -f [m[31m1[m[35m | tr -d :`[m
+[38;5;130m 25 [m    [36mcmd[m=[35m`[m[38;5;130mecho[m[31m [m[35m$irc[m[31m [m[35m| cut -d [m[38;5;130m'[m[31m [m[38;5;130m'[m[35m -f [m[31m2[m[35m`[m
+[38;5;130m 26 [m    [36mchan[m=[35m`[m[38;5;130mecho[m[31m [m[35m$irc[m[31m [m[35m| cut -d [m[38;5;130m'[m[31m [m[38;5;130m'[m[35m -f [m[31m3[m[35m`[m
+[38;5;130m 27 [m    [36mbarf[m=[35m`[m[38;5;130mecho[m[31m [m[35m$irc[m[31m [m[35m| cut -d [m[38;5;130m'[m[31m [m[38;5;130m'[m[35m -f [m[31m1-3[m[35m`[m
+[38;5;130m 28 [m    [34m#message=`echo $irc | cut -d ':' -f 3` #broken by IPv6[m
+[38;5;130m 29 [m    [36mmessage[m=[35m${irc[m[38;5;130m##[m[35m$barf[m :[35m}[m
+[38;5;130m 30 [m    [36mbotcommand[m=[35m`[m[38;5;130mecho[m[31m [m[35m$message[m[31m [m[35m| cut -d [m[38;5;130m'[m[31m [m[38;5;130m'[m[35m -f [m[31m1[m[35m`[m
+[38;5;130m 31 [m    [36mbotargs[m=[35m`$message##$botcommand }[m
+[38;5;130m 32 [m[35m    # reaction to !cmds[m
+[38;5;130m 33 [m[35m    if [ [m[38;5;130m"[m[35m`[m[38;5;130mecho[m[31m [m[35m$botcommand[m[31m [m[35m| cut -c1`[m[38;5;130m"[m[35m = [m[38;5;130m'[m[31m![m[38;5;130m'[m[35m ] ; then[m
+[38;5;130m 34 [m[35m      [m[36mstring[m=[38;5;130m"[m[31mPRIVMSG #notents :Got command [m[35m\"${botcommand}\"[m[31m from [m[35m${nick}[m[31m on [m[35m${chan}[m[31m with args [m[35m\[m[94m>[m[35;1H[38;5;130m 35 [m[35m      case #botcommand in[m
+[38;5;130m 36 [m[35m        [m[38;5;130m"[m[31m!add[m[38;5;130m"[m[35m)   [m[36mlist[m=[38;5;130m"[m[35m$botargs[m[31m [m[35m$list[m[31m [m[38;5;130m"
+ 37 [m[35m        [m[38;5;130m"[m[31m!list[m[38;5;130m"[m[35m)  [m[38;5;130mecho[m[31m [m[38;5;130m"[m[31mList is [m[35m${list}[m[38;5;130m"
+ 38 [m[35m        [m[38;5;130m"[m[31m!clear[m[38;5;130m"[m[35m) [m[36mlist[m=[38;5;130m""
+ 39 [m[35m      esac[m
+[38;5;130m 40 [m[35m      [m[38;5;130mecho[m[31m [m[35m$string[m
+[38;5;130m 41 [m[35m    fi[m
+[38;5;130m 42 
+ 43 [m[35m    if [ [m[38;5;130m"[m[35m${cmd}[m[38;5;130m"[m[35m = [m[38;5;130m"[m[31mPRIVMSG[m[38;5;130m"[m[35m ] ; then[m
+[38;5;130m 44 [m[35m      [m[38;5;130mecho[m[31m [m[38;5;130m"[m[31mGot message [m[35m\"${message}\"[m[31m from [m[35m${nick}[m[31m in [m[35m${chan}[m[38;5;130m"
+ 45 [m[35m    fi[m
+[1m[7mbashbot.sh  Line:33/46[71%]Col:10Buf:#1[34][0x22]                                                     [33;14H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[m[47;1H[K[47;1H:[?12l[?25hq[?25l[?12l[?25h[?25l[47;1H[K[47;1H[?1l>[?12l[?25h[?1049l]0;dondon@span:~/projects/finchd/bashbot[dondon@span bashbot]$ git commit -s [K[Ka -m "replace reder[K[Kirects with b[Ksend func[Kction"
+[master 42b6461] replace redirects with send function
+ 2 files changed, 356 insertions(+), 4 deletions(-)
+]0;dondon@span:~/projects/finchd/bashbot[dondon@span bashbot]$ it pu[K[K[K[K[Kgit push origin master
+Counting objects: 7, done.
+Delta compression using up to 2 threads.
+Compressing objects:  25% (1/4)   Compressing objects:  50% (2/4)   Compressing objects:  75% (3/4)   Compressing objects: 100% (4/4)   Compressing objects: 100% (4/4), done.
+Writing objects:  25% (1/4)   Writing objects:  50% (2/4)   Writing objects:  75% (3/4)   Writing objects: 100% (4/4)   Writing objects: 100% (4/4), 11.84 KiB | 0 bytes/s, done.
+Total 4 (delta 2), reused 0 (delta 0)
+To git@github.com:finchd/bashbot.git
+   7277ea4..42b6461  master -> master
+]0;dondon@span:~/projects/finchd/bashbot[dondon@span bashbot]$ ls /-/l/ /[Cbin
+lrwxrwxrwx 1 root root 7 May 31  2013 [0m[01;36m/bin[0m -> [01;34musr/bin[0m/
+]0;dondon@span:~/projects/finchd/bashbot[dondon@span bashbot]$ ./bashbot.sh 
+./bashbot.sh: line 33: unexpected EOF while looking for matching ``'
+./bashbot.sh: line 47: syntax error: unexpected end of file
+]0;dondon@span:~/projects/finchd/bashbot[dondon@span bashbot]$ ./bashbot.sh [3Pls -l /bin./bashbot.sh [3Pls -l /bingit push origin mastercommit -a -m "replace redirects with send function"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[33Ppush origin master[12Pls -l /bin./bashbot.sh [Kvim bashbot.sh 
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H[1;47r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[47;1H"bashbot.sh" 46L, 1300C[>c[1;1H[38;5;130m  1 [m[34m#!/usr/bin/env bash[m
+[38;5;130m  2 
+  3 [m[36mfunction[m [36msend {[m
+[38;5;130m  4 [m    [38;5;130mecho[m[31m [m[38;5;130m"[m[31m--> [m[35m$1[m[38;5;130m"
+  5 [m    [38;5;130mecho[m[31m [m[38;5;130m"[m[35m$1[m[38;5;130m"[m[31m [m[38;5;130m>>[m botfile
+[38;5;130m  6 [m[36m}[m
+[38;5;130m  7 
+  8 [m[36mline[m=[38;5;130m""
+  9 [m[36mstarted[m=[38;5;130m""
+ 10 rm[m botfile
+[38;5;130m 11 [mmkfifo botfile
+[38;5;130m 12 tail[m [35m-f[m botfile | nc irc.cat.pdx.edu [31m6667[m | [38;5;130mwhile true ; do
+ 13 [m    [38;5;130mif [[m [38;5;130m-z[m [35m$started[m [38;5;130m][m ; [38;5;130mthen
+ 14 [m[8Csend [38;5;130m"[m[31mUSER botbot 0 botbot :I iz a bot[m[38;5;130m"
+ 15 [m[8Csend [38;5;130m"[m[31mNICK botbot[m[38;5;130m"
+ 16 [m[8Csend [38;5;130m"[m[31mJOIN #notents[m[38;5;130m"
+ 17 [m[8C[36mstarted[m=[38;5;130m"[m[31myes[m[38;5;130m"
+ 18 [m    [38;5;130mfi
+ 19 [m    [38;5;130mif [[m [38;5;130m"[m[35m`[m[38;5;130mecho[m[31m [m[35m$irc[m[31m [m[35m| cut -d [m[38;5;130m'[m[31m [m[38;5;130m'[m[35m -f [m[31m1[m[35m`[m[38;5;130m"[m [38;5;130m=[m [31m"PING"[m [38;5;130m][m ; [38;5;130mthen
+ 20 [m      [38;5;130mecho[m[31m [m[38;5;130m"[m[31mPONG[m[38;5;130m"[m[31m [m[38;5;130m>>[m botfile
+[38;5;130m 21 [m    [38;5;130mfi
+ 22 [m    [38;5;130mread[m irc
+[38;5;130m 23 [m    [34m# parse msg fields[m
+[38;5;130m 24 [m    [36mnick[m=[35m`[m[38;5;130mecho[m[31m [m[35m$irc[m[31m [m[35m| cut -d [m[38;5;130m'[m[31m![m[38;5;130m'[m[35m -f [m[31m1[m[35m | tr -d :`[m
+[38;5;130m 25 [m    [36mcmd[m=[35m`[m[38;5;130mecho[m[31m [m[35m$irc[m[31m [m[35m| cut -d [m[38;5;130m'[m[31m [m[38;5;130m'[m[35m -f [m[31m2[m[35m`[m
+[38;5;130m 26 [m    [36mchan[m=[35m`[m[38;5;130mecho[m[31m [m[35m$irc[m[31m [m[35m| cut -d [m[38;5;130m'[m[31m [m[38;5;130m'[m[35m -f [m[31m3[m[35m`[m
+[38;5;130m 27 [m    [36mbarf[m=[35m`[m[38;5;130mecho[m[31m [m[35m$irc[m[31m [m[35m| cut -d [m[38;5;130m'[m[31m [m[38;5;130m'[m[35m -f [m[31m1-3[m[35m`[m
+[38;5;130m 28 [m    [34m#message=`echo $irc | cut -d ':' -f 3` #broken by IPv6[m
+[38;5;130m 29 [m    [36mmessage[m=[35m${irc[m[38;5;130m##[m[35m$barf[m :[35m}[m
+[38;5;130m 30 [m    [36mbotcommand[m=[35m`[m[38;5;130mecho[m[31m [m[35m$message[m[31m [m[35m| cut -d [m[38;5;130m'[m[31m [m[38;5;130m'[m[35m -f [m[31m1[m[35m`[m
+[38;5;130m 31 [m    [36mbotargs[m=[35m`$message##$botcommand }[m
+[38;5;130m 32 [m[35m    # reaction to !cmds[m
+[38;5;130m 33 [m[35m    if [ [m[38;5;130m"[m[35m`[m[38;5;130mecho[m[31m [m[35m$botcommand[m[31m [m[35m| cut -c1`[m[38;5;130m"[m[35m = [m[38;5;130m'[m[31m![m[38;5;130m'[m[35m ] ; then[m
+[38;5;130m 34 [m[35m      [m[36mstring[m=[38;5;130m"[m[31mPRIVMSG #notents :Got command [m[35m\"${botcommand}\"[m[31m from [m[35m${nick}[m[31m on [m[35m${chan}[m[31m with args [m[35m\[m[94m>[m[35;1H[38;5;130m 35 [m[35m      case #botcommand in[m
+[38;5;130m 36 [m[35m        [m[38;5;130m"[m[31m!add[m[38;5;130m"[m[35m)   [m[36mlist[m=[38;5;130m"[m[35m$botargs[m[31m [m[35m$list[m[31m [m[38;5;130m"
+ 37 [m[35m        [m[38;5;130m"[m[31m!list[m[38;5;130m"[m[35m)  [m[38;5;130mecho[m[31m [m[38;5;130m"[m[31mList is [m[35m${list}[m[38;5;130m"
+ 38 [m[35m        [m[38;5;130m"[m[31m!clear[m[38;5;130m"[m[35m) [m[36mlist[m=[38;5;130m""
+ 39 [m[35m      esac[m
+[38;5;130m 40 [m[35m      [m[38;5;130mecho[m[31m [m[35m$string[m
+[38;5;130m 41 [m[35m    fi[m
+[38;5;130m 42 
+ 43 [m[35m    if [ [m[38;5;130m"[m[35m${cmd}[m[38;5;130m"[m[35m = [m[38;5;130m"[m[31mPRIVMSG[m[38;5;130m"[m[35m ] ; then[m
+[38;5;130m 44 [m[35m      [m[38;5;130mecho[m[31m [m[38;5;130m"[m[31mGot message [m[35m\"${message}\"[m[31m from [m[35m${nick}[m[31m in [m[35m${chan}[m[38;5;130m"
+ 45 [m[35m    fi[m
+[1m[7mbashbot.sh  Line:33/46[71%]Col:10Buf:#1[34][0x22]                                                     [33;14H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[46;33H1Buf:#1[96][0x60][33;15H[?25l[m[14;13H[38;5;130msend[15;13Hsend[16;13Hsend[33;15H[?12l[?25h[m[46;19H[1m[7m4/46[73%[14C110][0x6E][34;15H[46;19H5/46[76%[14C32][0x20]  [35;15H[46;19H6/46[78%[14C97][0x61][36;15H[46;19H7/46[80%[14C108][0x6C][37;15H[46;19H8/46[82%[14C99][0x63]  [38;15H[46;19H9/46[84%]Col:10B[39;14H[46;18H40/46[86%]Col:11Buf:#1[32][0x20][40;15H[46;19H1/46[89%]Col:6Buf:#1[105][0x69][41;10H[46;19H2/46[91%]Col:1Buf:#1[0][0x0]    [42;5H[46;19H3/46[93%]Col:11Buf:#1[36][0x24][43;15H[46;19H4/46[95%[15C2][0x20][44;15H[46;19H5/46[97%]Col:6Buf:#1[105][0x69][45;10H[?25l[1;45r[m[45;1H
+[1;47r[45;1H[38;5;130m 46 [m[35mdone[m[47;1H[K[46;19H[1m[7m6/46[100%]Col:4Buf:#1[101][0x65][45;8H[?12l[?25h[46;19H5/46[97%]Col:6Buf:#1[105][0x69]  [44;10H[46;19H4/46[95%]Col:11Buf:#1[32][0x20][43;15H[46;19H3/46[93%[15C6][0x24][42;15H[46;19H2/46[91%]Col:1Buf:#1[0][0x0]    [41;5H[46;19H1/46[89%]Col:6Buf:#1[105][0x69][40;10H[46;19H0/46[86%]Col:11Buf:#1[32][0x20][39;15H[46;18H39/46[84%]Col:10Buf:#1[99][0x63][38;14H[46;19H8/46[82%]Col:11B[37;15H[46;19H9/46[84%]Col:10B[38;14H[46;18H40/46[86%]Col:11Buf:#1[32][0x20][39;15H[46;19H1/46[89%]Col:6Buf:#1[105][0x69][40;10H[46;19H2/46[91%]Col:1Buf:#1[0][0x0]    [41;5H[46;19H3/46[93%]Col:11Buf:#1[36][0x24][42;15H[46;19H4/46[95%[15C2][0x20][43;15H[46;33H2B[7C4][0x22][43;16H[46;33H3Buf:#1[71][0x47][43;17H[?25l[m[42;7H[35mif [[m[1C[38;5;130m"[m[35m${cmd}[m[38;5;130m"[m[35m =[m[1C[38;5;130m"[m[31mPRIVMSG[m[38;5;130m"[m[35m ] ; then[m[42;41H[K[43;9H[38;5;130mecho[m[31m [m[38;5;130m"[m[31mGot message [m[35m\"${message}\"[m[31m from [m[35m${nick}[m[31m in [m[35m${chan}[m[38;5;130m"[m[43;66H[K[46;12H[1m[7m[+] Line:43/46[93%]Col:3Buf:#1[105][0x69][42;7H[?12l[?25h[46;22H2/46[91%]Col:1Buf:#1[0][0x0]    [41;5H[?25l[47;1H[m:[?12l[?25hu[?25l[?12l[?25hn[?25l[?12l[?25hd[?25l[?12l[?25ho[?25l[?12l[?25h[?25l2 changes; before #1  3 seconds ago[42;7H[35m  if [ [m[38;5;130m"[m[35m${cmd}[m[38;5;130m"[m[1C[35m= [m[38;5;130m"[m[31mPRIVMSG[m[38;5;130m"[m[1C[35m] ; then[43;9H  [m[38;5;130mecho[m[31m [m[38;5;130m"[m[31mGot message [m[35m\"${message}\"[m[31m from [m[35m${nick}[m[31m in [m[35m${chan}[m[38;5;130m"[m[46;12H[1m[7m Line:43/46[93%]Col:5Buf:#1[105][0x69][42;9H[?12l[?25h[46;19H4/46[95%]Col:1Buf:#1[32][0x20]  [43;5H[46;32H2B[43;6H[46;32H3B[43;7H[46;32H4B[43;8H[46;32H5B[43;9H[46;32H6B[43;10H[46;32H7Buf:#1[101][0x65][43;11H[46;32H8Buf:#1[99][0x63]  [43;12H[46;32H9Buf:#1[104][0x68][43;13H[46;32H10Buf:#1[111][0x6F][43;14H[46;33H1Buf:#1[32][0x20]  [43;15H[46;33H2B[7C4][0x22][43;16H[46;33H3Buf:#1[71][0x47][43;17H[?25l[m[47;1H[1m-- INSERT --[m[47;13H[K[43;17H[?12l[?25h[?25l[31m<Got message [m[35m\"${message}\"[m[31m from [m[35m${nick}[m[31m in [m[35m${chan}[m[38;5;130m"[m[46;12H[1m[7m[+] Line:44/46[95%]Col:14Buf:#1[71][0x47][43;18H[?12l[?25h[?25l[m[31m-Got message [m[35m\"${message}\"[m[31m from [m[35m${nick}[m[31m in [m[35m${chan}[m[38;5;130m"[m[46;36H[1m[7m5B[43;19H[?12l[?25h[?25l[m[31m-Got message [m[35m\"${message}\"[m[31m from [m[35m${nick}[m[31m in [m[35m${chan}[m[38;5;130m"[m[46;36H[1m[7m6B[43;20H[?12l[?25h[?25l[m[31m Got message [m[35m\"${message}\"[m[31m from [m[35m${nick}[m[31m in [m[35m${chan}[m[38;5;130m"[m[46;36H[1m[7m7B[43;21H[?12l[?25h[m[47;1H[K[43;20H[?25l[46;36H[1m[7m6Buf:#1[32][0x20][43;20H[?12l[?25h[?25l[47;1H[m:[?12l[?25hw[?25l[?12l[?25h[?25l"bashbot.sh" 46L, 1304C written[1;1H[34m[48;5;248m  [m[38;5;130m  2 [m
+[34m[48;5;248m  [m[38;5;130m  3 [m[36mfunction[m [36msend {[m
+[34m[48;5;248m  [m[38;5;130m  4 [m    [38;5;130mecho[m[31m [m[38;5;130m"[m[31m--> [m[35m$1[m[38;5;130m"[m
+[34m[48;5;248m  [m[38;5;130m  5 [m    [38;5;130mecho[m[31m [m[38;5;130m"[m[35m$1[m[38;5;130m"[m[31m [m[38;5;130m>>[m botfile
+[34m[48;5;248m  [m[38;5;130m  6 [m[36m}[m
+[34m[48;5;248m  [m[38;5;130m  7 [m
+[34m[48;5;248m  [m[38;5;130m  8 [m[36mline[m=[38;5;130m""[m
+[34m[48;5;248m  [m[38;5;130m  9 [m[36mstarted[m=[38;5;130m""[m
+[34m[48;5;248m  [m[38;5;130m 10 rm[m botfile
+[34m[48;5;248m  [m[38;5;130m 11 [mmkfifo botfile
+[34m[48;5;248m  [m[38;5;130m 12 tail[m [35m-f[m botfile | nc irc.cat.pdx.edu [1C[31m667[m | [38;5;130mwhile true ; do[m
+[34m[48;5;248m  [m[38;5;130m 13 [m    [38;5;130mif [[m [38;5;130m-z[m [35m$started[m [38;5;130m][m ; [38;5;130mthen[m
+[34m[48;5;248m  [m[38;5;130m 14 [m        [38;5;130msend[m [38;5;130m"[m[31mUSER botbot 0 botbot :I iz a bot[m[38;5;130m"[m
+[34m[48;5;248m  [m[38;5;130m 15 [m        [38;5;130msend[m [38;5;130m"[m[31mNICK botbot[m[38;5;130m"[m
+[34m[48;5;248m  [m[38;5;130m 16 [m        [38;5;130msend[m [38;5;130m"[m[31mJOIN #notents[m[38;5;130m"[m
+[34m[48;5;248m  [m[38;5;130m 17 [m        [36mstarted[m=[38;5;130m"[m[31myes[m[38;5;130m"[m
+[34m[48;5;248m  [m[38;5;130m 18 [m    [38;5;130mfi[m
+[34m[48;5;248m  [m[38;5;130m 19 [m    [38;5;130mif [[m [38;5;130m"[m[35m`[m[38;5;130mecho[m[31m [m[35m$irc[m[31m [m[35m| cut -d [m[1C[31m [m[38;5;130m'[m[35m -f [m[31m1[m[35m`[m[38;5;130m"[m [38;5;130m=[m [31m"PING"[m [38;5;130m][m ; [38;5;130mthen[m
+[34m[48;5;248m  [m[38;5;130m 20 [m      [38;5;130mecho[m[31m [m[38;5;130m"[m[31mPONG[m[38;5;130m"[m[31m [m[38;5;130m>>[m botfile
+[34m[48;5;248m  [m[38;5;130m 21 [m    [38;5;130mfi[m
+[34m[48;5;248m  [m[38;5;130m 22 [m    [38;5;130mread[m irc
+[34m[48;5;248m  [m[38;5;130m 23 [m    [34m# parse msg fields[m
+[34m[48;5;248m  [m[38;5;130m 24 [m    [36mnick[m=[35m`[m[38;5;130mecho[m[31m [m[35m$irc[m[31m [m[35m| cut -d [m[1C[31m![m[38;5;130m'[m[35m -f[m[1C[31m1[m[1C[35m| tr -d :`[m
+[34m[48;5;248m  [m[38;5;130m 25 [m    [36mcmd[m=[35m`[m[38;5;130mecho[m[31m [m[35m$irc[m[31m [m[35m| cut -d [m[1C[31m [m[38;5;130m'[m[35m -f [m[31m2[m[35m`[m
+[34m[48;5;248m  [m[38;5;130m 26 [m    [36mchan[m=[35m`[m[38;5;130mecho[m[31m [m[35m$irc[m[31m [m[35m| cut -d [m[1C[31m [m[38;5;130m'[m[35m -f [m[31m3[m[35m`[m
+[34m[48;5;248m  [m[38;5;130m 27 [m    [36mbarf[m=[35m`[m[38;5;130mecho[m[31m [m[35m$irc[m[31m [m[35m| cut -d [m[1C[31m [m[38;5;130m'[m[35m -f [m[31m1-3[m[35m`[m
+[34m[48;5;248m  [m[38;5;130m 28 [m    [34m#message=`echo $irc | cut -d ':' -f 3` #broken by IPv6[m
+[34m[48;5;248m  [m[38;5;130m 29 [m    [36mmessage[m=[35m${irc[m[38;5;130m##[m[35m$barf[m :[35m}[m
+[34m[48;5;248m  [m[38;5;130m 30 [m    [36mbotcommand[m=[35m`[m[38;5;130mecho[m[31m [m[35m$message[m[31m [m[35m| cut -d [m[1C[31m [m[38;5;130m'[m[35m -f [m[31m1[m[35m`[m
+[34m[48;5;248m  [m[38;5;130m 31 [m    [36mbotargs[m=[35m`$message##$botcommand }[m
+[34m[48;5;248m  [m[38;5;130m 32 [m[2C[35m  # reaction to !cmds[m
+[97m[101m>>[m[38;5;130m 33 [m[2C[35m  if [ [m[38;5;130m"[m[35m`[m[38;5;130mecho[m[31m [m[35m$botcommand[m[31m [m[35m| cut -c1`[m[38;5;130m"[m[1C[35m= [m[1C[31m![m[38;5;130m'[m[1C[35m] ; then[m
+[34m[48;5;248m  [m[38;5;130m 34 [m[4C[35m  [m[36mstring[m=[38;5;130m"[m[31mPRIVMSG #notents :Got command [m[35m\"${botcommand}\"[m[31m from [m[35m${nick}[m[31m on [m[35m${chan}[m[31m with args[m
+[34m[48;5;248m  [m[38;5;130m 35 [m[4C[35m  case #botcommand in[m
+[34m[48;5;248m  [m[38;5;130m 36 [m[6C[35m  [m[38;5;130m"[m[31m!add[m[38;5;130m"[m[35m)   [m[36mlist[m=[38;5;130m"[m[35m$botargs[m[31m [m[35m$list[m[31m [m[38;5;130m"[m
+[34m[48;5;248m  [m[38;5;130m 37 [m[6C[35m  [m[38;5;130m"[m[31m!list[m[38;5;130m"[m[35m)  [m[38;5;130mecho[m[31m [m[38;5;130m"[m[31mList is [m[35m${list}[m[38;5;130m"[m
+[34m[48;5;248m  [m[38;5;130m 38 [m[6C[35m  [m[38;5;130m"[m[31m!clear[m[38;5;130m"[m[35m) [m[36mlist[m=[38;5;130m""[m
+[34m[48;5;248m  [m[38;5;130m 39 [m[4C[35m  esac[m
+[34m[48;5;248m  [m[38;5;130m 40 [m[4C[35m  [m[38;5;130mecho[m[31m [m[35m$string[m
+[34m[48;5;248m  [m[38;5;130m 41 [m[2C[35m  fi[m
+[34m[48;5;248m  [m[38;5;130m 42 [m
+[34m[48;5;248m  [m[38;5;130m 43 [m[2C[35m  if [ [m[38;5;130m"[m[35m${cmd}[m[38;5;130m"[m[1C[35m= [m[38;5;130m"[m[31mPRIVMSG[m[38;5;130m"[m[1C[35m] ; then[m
+[34m[48;5;248m  [m[38;5;130m 44 [m[4C[35m  [m[38;5;130mecho[m[31m [m[38;5;130m"[m[31m<-- Got message [m[35m\"${message}\"[m[31m from [m[35m${nick}[m[31m in [m[35m${chan}[m[38;5;130m"[m
+[34m[48;5;248m  [m[38;5;130m 45 [m[2C[35m  fi[m
+[34m[48;5;248m  [m[38;5;130m 46 [m[35mdone[m[46;12H[1m[7m Line:44/46[95%]Col:16Buf:#1[32][0x20]    [43;22H[?12l[?25h[m[47;1H[K[?25l[42;18H[35m[106m{[3C}[m[46;19H[1m[7m3/46[93%[14C125][0x7D][42;22H[?12l[?25h[?25l[m[35m{cmd}[m[46;19H[1m[7m2/46[91%]Col:1Buf:#1[0][0x0]     [41;7H[?12l[?25h[46;19H1/46[89%]Col:6Buf:#1[105][0x69][40;12H[46;19H0/46[86%]Col:16Buf:#1[105][0x69][39;22H[46;18H39/46[84%]Col:10Buf:#1[99][0x63]  [38;16H[46;19H8/46[82%]Col:16Buf:#1[34][0x22][37;22H[46;19H7/46[80%[14C41][0x29][36;22H[46;19H6/46[78%[14C32][0x20][35;22H[46;19H5/46[76%[14C99][0x63][34;22H[46;19H4/46[73%[14C82][0x52][33;22H[?25l[46;19H3/46[71%[14C32][0x20][m
+unexpected EOF while looking for matching ``'[32;22H[?12l[?25h[46;33H[1m[7m7B[7C6][0x24][32;23H[46;33H8Buf:#1[98][0x62][32;24H[?25l[m[47;1H[1m-- INSERT --[m[47;13H[K[32;24H[?12l[?25h[?25l[35m{botcommand[m[97m[101m | cut -c1`" = '!' ] ; then[33;7H      string="PRIVMSG #notents :Got command \"[13C\" from [7C on [7C with args[34;7H      case #botcommand in[35;7H        "!add")   list="[8C [5C "[36;7H        "!list")  echo "List is [7C"[37;7H        "!clear") list=""[38;7H      esac[39;7H      echo [40;7H    fi[42;7H    if [m[1C [8C = [9C [1C[97m[101m ; then[43;7H      echo "<-- Got message \"[10C\" from [7C in [7C"[44;7H    fi[45;7Hdone[m[46;12H[1m[7m[+] Line:33/46[71%]Col:19Buf:#1[98][0x62][32;25H[?12l[?25h[46;35H20Buf:#1[111][0x6F][32;26H[46;36H1B[8C6][0x74][32;27H[46;36H2Buf:#1[99][0x63]  [32;28H[46;36H3Buf:#1[111][0x6F][32;29H[46;36H4B[7C09][0x6D][32;30H[46;36H5B[32;31H[46;36H6Buf:#1[97][0x61]  [32;32H[46;36H7Buf:#1[110][0x6E][32;33H[46;36H8B[7C00][0x64][32;34H[46;36H9Buf:#1[32][0x20]  [32;35H[?25l[m[35m}[m[31m [m[35m| cut -c1`[m[38;5;130m"[m[35m = [m[38;5;130m'[m[31m![m[38;5;130m'[m[35m ] ; then[33;7H      [m[36mstring[m=[38;5;130m"[m[31mPRIVMSG #notents :Got command [m[35m\"[13C\"[m[31m from [7C on [7C with args[m[34;7H[35m      case #botcommand in[35;7H        [m[38;5;130m"[m[31m!add[m[38;5;130m"[m[35m)   [m[36mlist[m=[38;5;130m"[m[8C[31m [5C [m[38;5;130m"[m[36;7H[35m        [m[38;5;130m"[m[31m!list[m[38;5;130m"[m[35m)  [m[38;5;130mecho[m[31m [m[38;5;130m"[m[31mList is [m[7C[38;5;130m"[m[37;7H[35m        [m[38;5;130m"[m[31m!clear[m[38;5;130m"[m[35m) [m[36mlist[m=[38;5;130m""[m[38;7H[35m      esac[39;7H      [m[38;5;130mecho[m[31m [m[40;7H[35m    fi[42;7H    if [ [8C = [9C ] ; then[43;7H      [m[38;5;130mecho[m[31m [m[38;5;130m"[m[31m<-- Got message [m[35m\"[10C\"[m[31m from [7C in [m[7C[38;5;130m"[m[44;7H[35m    fi[45;7Hdone[m[32;24H[35m[106m{[10C}[m[46;35H[1m[7m30B[32;36H[?12l[?25h[?25l[m[32;24H[35m{[10C}[m[46;22H[1m[7m2/46[69%]Col:24Buf:#1[0][0x0]   [31;30H[?12l[?25h[46;36H3Buf:#1[115][0x73][31;29H[46;22H1/46[67%[14C35][0x23]  [30;29H[46;36H4B[7C6][0x24][30;30H[46;36H5Buf:#1[98][0x62][30;31H[?25l[m[35m{botcommand[m[97m[101m [m[35m}[m[30;31H[35m[106m{[11C}[m[46;36H[1m[7m6B[30;32H[?12l[?25h[?25l[m[35m{[11C}[m[46;36H[1m[7m7Buf:#1[111][0x6F][30;33H[?12l[?25h[46;36H8B[8C6][0x74][30;34H[46;36H9Buf:#1[99][0x63]  [30;35H[46;35H30Buf:#1[111][0x6F][30;36H[46;36H1B[7C09][0x6D][30;37H[46;36H2B[30;38H[46;36H3Buf:#1[97][0x61]  [30;39H[46;36H4Buf:#1[110][0x6E][30;40H[46;36H5B[7C00][0x64][30;41H[46;36H6Buf:#1[32][0x20]  [30;42H[?25l[m[35m} }[m[30;31H[35m[106m{[10C}[m[46;36H[1m[7m7B[30;43H[?12l[?25h[?25l[m[30;31H[35m{[10C}[m[46;22H[1m[7m2/46[69%]Col:24Buf:#1[0][0x0]   [31;30H[?12l[?25h[46;22H3/46[71%]Col:37Buf:#1[45][0x2D][32;43H[46;22H2/46[69%]Col:24Buf:#1[0][0x0]   [31;30H[?25l[m[30;31H[35m[106m{[10C}[m[46;22H[1m[7m1/46[67%]Col:37Buf:#1[32][0x20][30;43H[?12l[?25h[?25l[m[30;31H[35m{[10C}[m[46;36H[1m[7m8Buf:#1[125][0x7D][30;44H[?12l[?25h[?25l[46;36H9Buf:#1[0][0x0]    [30;45H[?12l[?25h[?25l[m[35m`[m[31;7H    [34m# reaction to !cmds[m[32;7H    [38;5;130mif [[m [32C [38;5;130m=[m [31m'!'[m [38;5;130m][m ; [38;5;130mthen[m[33;7H      [34;7H      [38;5;130mcase[m [34m#botcommand in[m[35;7H        [6C[38;5;130m)[m   [36;7H        [7C)  [37;7H        [8C) [38;7H      [38;5;130mesac[m[39;7H      [40;7H    [38;5;130mfi[m[42;7H    [38;5;130mif [[m [8C [38;5;130m=[m [31m"[7C"[m [38;5;130m][m ; [38;5;130mthen[m[43;7H      [44;7H    [38;5;130mfi[45;7Hdone[m[46;35H[1m[7m40B[30;46H[?12l[?25h[m[47;1H[K[30;45H[?25l[46;35H[1m[7m39Buf:#1[96][0x60][30;45H[?12l[?25h[?25l[47;1H[m:[?12l[?25hx[?25l[?12l[?25h[?25l"bashbot.sh" 46L, 1309C written[34;1H[97m[101m>>[m[32;1H[34m[48;5;248m  [47;1H
+[m[?1l>[?12l[?25h[?1049l]0;dondon@span:~/projects/finchd/bashbot[dondon@span bashbot]$ vim bashbot.sh [2P./[C[C[C[C[C[C[C[C[C[C[C[3Pls -l /bingit push origin mastercommit -a -m "replace redirects with send function"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cvim bashbot.sh [Kgit diff master bashbot.sh
+[?1h=[1mdiff --git a/bashbot.sh b/bashbot.sh[m[m
+[1mindex 8de2301..073e58d 100755[m[m
+[1m--- a/bashbot.sh[m[m
+[1m+++ b/bashbot.sh[m[m
+[36m@@ -28,9 +28,9 @@[m [mtail -f botfile | nc irc.cat.pdx.edu 6667 | while true ; do[m[m
+     #message=`echo $irc | cut -d ':' -f 3` #broken by IPv6[m[m
+     message=${irc##$barf :}[m[m
+     botcommand=`echo $message | cut -d ' ' -f 1`[m[m
+[31m-    botargs=`$message##$botcommand }[m[m
+[32m+[m[32m    botargs=`$message##${botcommand} }`[m[m
+     # reaction to !cmds[m[m
+[31m-    if [ "`echo $botcommand | cut -c1`" = '!' ] ; then[m[m
+[32m+[m[32m    if [ "`echo ${botcommand} | cut -c1`" = '!' ] ; then[m[m
+       string="PRIVMSG #notents :Got command \"${botcommand}\" from ${nick} on ${chan} with args \"${b[m
+       case #botcommand in[m[m
+         "!add")   list="$botargs $list "[m[m
+[36m@@ -41,6 +41,6 @@[m [mtail -f botfile | nc irc.cat.pdx.edu 6667 | while true ; do[m[m
+     fi[m[m
+ [m[m
+     if [ "${cmd}" = "PRIVMSG" ] ; then[m[m
+[31m-      echo "Got message \"${message}\" from ${nick} in ${chan}"[m[m
+[32m+[m[32m      echo "<-- Got message \"${message}\" from ${nick} in ${chan}"[m[m
+     fi[m[m
+ done[m[m
+[7m(END)[27m[K[K[?1l>]0;dondon@span:~/projects/finchd/bashbot[dondon@span bashbot]$ git diff master bashbot.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[11Pvim bashbot.sh 
+[?1049h[?1h=[2;1H▽[6n[2;1H  [1;1H[1;47r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[47;1H"bashbot.sh" 46L, 1309C[>c[1;1H[38;5;130m  1 [m[34m#!/usr/bin/env bash[m
+[38;5;130m  2 
+  3 [m[36mfunction[m [36msend {[m
+[38;5;130m  4 [m    [38;5;130mecho[m[31m [m[38;5;130m"[m[31m--> [m[35m$1[m[38;5;130m"
+  5 [m    [38;5;130mecho[m[31m [m[38;5;130m"[m[35m$1[m[38;5;130m"[m[31m [m[38;5;130m>>[m botfile
+[38;5;130m  6 [m[36m}[m
+[38;5;130m  7 
+  8 [m[36mline[m=[38;5;130m""
+  9 [m[36mstarted[m=[38;5;130m""
+ 10 rm[m botfile
+[38;5;130m 11 [mmkfifo botfile
+[38;5;130m 12 tail[m [35m-f[m botfile | nc irc.cat.pdx.edu [31m6667[m | [38;5;130mwhile true ; do
+ 13 [m    [38;5;130mif [[m [38;5;130m-z[m [35m$started[m [38;5;130m][m ; [38;5;130mthen
+ 14 [m[8Csend [38;5;130m"[m[31mUSER botbot 0 botbot :I iz a bot[m[38;5;130m"
+ 15 [m[8Csend [38;5;130m"[m[31mNICK botbot[m[38;5;130m"
+ 16 [m[8Csend [38;5;130m"[m[31mJOIN #notents[m[38;5;130m"
+ 17 [m[8C[36mstarted[m=[38;5;130m"[m[31myes[m[38;5;130m"
+ 18 [m    [38;5;130mfi
+ 19 [m    [38;5;130mif [[m [38;5;130m"[m[35m`[m[38;5;130mecho[m[31m [m[35m$irc[m[31m [m[35m| cut -d [m[38;5;130m'[m[31m [m[38;5;130m'[m[35m -f [m[31m1[m[35m`[m[38;5;130m"[m [38;5;130m=[m [31m"PING"[m [38;5;130m][m ; [38;5;130mthen
+ 20 [m      [38;5;130mecho[m[31m [m[38;5;130m"[m[31mPONG[m[38;5;130m"[m[31m [m[38;5;130m>>[m botfile
+[38;5;130m 21 [m    [38;5;130mfi
+ 22 [m    [38;5;130mread[m irc
+[38;5;130m 23 [m    [34m# parse msg fields[m
+[38;5;130m 24 [m    [36mnick[m=[35m`[m[38;5;130mecho[m[31m [m[35m$irc[m[31m [m[35m| cut -d [m[38;5;130m'[m[31m![m[38;5;130m'[m[35m -f [m[31m1[m[35m | tr -d :`[m
+[38;5;130m 25 [m    [36mcmd[m=[35m`[m[38;5;130mecho[m[31m [m[35m$irc[m[31m [m[35m| cut -d [m[38;5;130m'[m[31m [m[38;5;130m'[m[35m -f [m[31m2[m[35m`[m
+[38;5;130m 26 [m    [36mchan[m=[35m`[m[38;5;130mecho[m[31m [m[35m$irc[m[31m [m[35m| cut -d [m[38;5;130m'[m[31m [m[38;5;130m'[m[35m -f [m[31m3[m[35m`[m
+[38;5;130m 27 [m    [36mbarf[m=[35m`[m[38;5;130mecho[m[31m [m[35m$irc[m[31m [m[35m| cut -d [m[38;5;130m'[m[31m [m[38;5;130m'[m[35m -f [m[31m1-3[m[35m`[m
+[38;5;130m 28 [m    [34m#message=`echo $irc | cut -d ':' -f 3` #broken by IPv6[m
+[38;5;130m 29 [m    [36mmessage[m=[35m${irc[m[38;5;130m##[m[35m$barf[m :[35m}[m
+[38;5;130m 30 [m    [36mbotcommand[m=[35m`[m[38;5;130mecho[m[31m [m[35m$message[m[31m [m[35m| cut -d [m[38;5;130m'[m[31m [m[38;5;130m'[m[35m -f [m[31m1[m[35m`[m
+[38;5;130m 31 [m    [36mbotargs[m=[35m`$message##${botcommand} }`[m
+[38;5;130m 32 [m    [34m# reaction to !cmds[m
+[38;5;130m 33 [m    [38;5;130mif [[m [38;5;130m"[m[35m`[m[38;5;130mecho[m[31m [m[35m${botcommand}[m[31m [m[35m| cut -c1`[m[38;5;130m"[m [38;5;130m=[m [31m'!'[m [38;5;130m][m ; [38;5;130mthen
+ 34 [m      [36mstring[m=[38;5;130m"[m[31mPRIVMSG #notents :Got command [m[35m\"${botcommand}\"[m[31m from [m[35m${nick}[m[31m on [m[35m${chan}[m[31m with args [m[35m\[m[94m>[m[35;1H[38;5;130m 35 [m      [38;5;130mcase[m [34m#botcommand in[m
+[38;5;130m 36 [8C"[m[31m!add[m[38;5;130m")[m   [36mlist[m=[38;5;130m"[m[35m$botargs[m[31m [m[35m$list[m[31m [m[38;5;130m"
+ 37 [8C"[m[31m!list[m[38;5;130m"[m)  [38;5;130mecho[m[31m [m[38;5;130m"[m[31mList is [m[35m${list}[m[38;5;130m"
+ 38 [8C"[m[31m!clear[m[38;5;130m"[m) [36mlist[m=[38;5;130m""
+ 39 [m      

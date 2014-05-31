@@ -28,9 +28,9 @@ tail -f botfile | nc irc.cat.pdx.edu 6667 | while true ; do
     #message=`echo $irc | cut -d ':' -f 3` #broken by IPv6
     message=${irc##$barf :}
     botcommand=`echo $message | cut -d ' ' -f 1`
-    botargs=`$message##$botcommand }
+    botargs=`$message##${botcommand} }`
     # reaction to !cmds
-    if [ "`echo $botcommand | cut -c1`" = '!' ] ; then
+    if [ "`echo ${botcommand} | cut -c1`" = '!' ] ; then
       string="PRIVMSG #notents :Got command \"${botcommand}\" from ${nick} on ${chan} with args \"${botargs}\""
       case #botcommand in
         "!add")   list="$botargs $list "
@@ -41,6 +41,6 @@ tail -f botfile | nc irc.cat.pdx.edu 6667 | while true ; do
     fi
 
     if [ "${cmd}" = "PRIVMSG" ] ; then
-      echo "Got message \"${message}\" from ${nick} in ${chan}"
+      echo "<-- Got message \"${message}\" from ${nick} in ${chan}"
     fi
 done
